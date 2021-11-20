@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "518009141888-v43d622tnd8r5c7kiqn19b4teriokdsj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nursery_app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "518009141888-dvllqk7rhar65r7f7prgokbn72f00ogl.apps.googleusercontent.com",
           "client_type": 3
         }
