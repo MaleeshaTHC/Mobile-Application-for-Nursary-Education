@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableHighlight} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
-import {back} from 'react-native/Libraries/Animated/Easing';
 
 const Dots = ({selected}) => {
   let backgroundColor;
