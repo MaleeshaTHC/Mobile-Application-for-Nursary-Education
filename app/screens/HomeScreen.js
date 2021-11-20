@@ -1,8 +1,18 @@
 import React, {useContext, useState} from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
+import {AuthContext} from '../navigation/AuthProvider';
+
+import FormButton from '../components/FormButton';
 
 const HomeScreen = ({navigation}) => {
-  return <View>Welcome</View>;
+  const {user, logout} = useContext(AuthContext);
+
+  return (
+    <View>
+      <Text>Welcome {user.email}</Text>
+      <FormButton buttonTitle="Logout" onPress={() => logout()} />
+    </View>
+  );
 };
 
 export default HomeScreen;
