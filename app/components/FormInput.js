@@ -26,16 +26,15 @@ export default FormInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    marginTop: 5,
     marginBottom: 10,
-    width: '100%',
+    width: '90%',
     height: windowHeight / 15,
-    borderColor: '#ccc',
-    borderRadius: 3,
+    borderColor: '#f5fffa',
+    borderRadius: 13,
     borderWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f5fffa',
   },
   iconStyle: {
     padding: 10,
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
   },
   inputField: {
     padding: 10,
-    marginTop: 5,
+    marginTop: 10,
     marginBottom: 10,
     width: windowWidth / 1.5,
     height: windowHeight / 15,

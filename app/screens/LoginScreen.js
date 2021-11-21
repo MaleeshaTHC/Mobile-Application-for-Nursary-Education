@@ -6,6 +6,7 @@ import {
   Platform,
   StyleSheet,
   ScrollView,
+  Image,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 
@@ -21,7 +22,13 @@ const LoginScreen = ({navigation}) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.text}>Nursery Education App</Text>
+      <Image
+        style={styles.logo}
+        source={require('../assets/images/logo.png')}
+      />
+      <Text style={styles.text}>Little Kingdom Education</Text>
+      <Text />
+      <Text />
 
       <FormInput
         labelValue={email}
@@ -48,7 +55,7 @@ const LoginScreen = ({navigation}) => {
 
       <TouchableOpacity
         style={styles.forgotButton}
-        onPress={() => navigation.navigate('Signup_Screen')}>
+        onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>
       </TouchableOpacity>
 
@@ -58,7 +65,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#4867aa"
-            backgroundColor="#e6eaf4"
+            backgroundColor="#83e6b9"
             onPress={() => fbLogin()}
           />
 
@@ -66,7 +73,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Google"
             btnType="google"
             color="#de4d41"
-            backgroundColor="#f5e7ea"
+            backgroundColor="#83e6b9"
             onPress={() => googleLogin()}
           />
         </View>
@@ -74,7 +81,7 @@ const LoginScreen = ({navigation}) => {
 
       <TouchableOpacity
         style={styles.forgotButton}
-        onPress={() => navigation.navigate('Signup_Screen')}>
+        onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.navButtonText}>
           Don't have an account? Create here
         </Text>
@@ -89,18 +96,21 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
-    paddingTop: 50,
+    padding: 25,
+    paddingTop: 60,
+    paddingBottom: 100,
+    backgroundColor: '#d0f7e6',
   },
   logo: {
-    height: 150,
-    width: 150,
+    height: 100,
+    width: 100,
     resizeMode: 'cover',
+    borderRadius: 100,
   },
   text: {
     fontSize: 28,
-    marginBottom: 10,
-    color: '#051d5f',
+    marginTop: 10,
+    color: '#228257',
   },
   navButton: {
     marginTop: 15,
@@ -111,6 +121,7 @@ const styles = StyleSheet.create({
   navButtonText: {
     fontSize: 18,
     fontWeight: '500',
-    color: '#2e64e5',
+    marginBottom: 15,
+    color: '#228257',
   },
 });

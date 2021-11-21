@@ -1,22 +1,26 @@
+/* eslint-disable react-native/no-inline-styles */
 // Tab View inside Navigation Drawer
 // https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
 
 import 'react-native-gesture-handler';
 
-import * as React from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
-
-import {
-  NavigationContainer,
-  getFocusedRouteNameFromRoute,
-} from '@react-navigation/native';
+import React, {useContext, useState} from 'react';
+import {View, TouchableOpacity, Image, Text} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {AuthContext} from '../navigation/AuthProvider';
 
 import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import PhrasesScreen from '../screens/PhrasesScreen';
 import ExerciseScreen from '../screens/ExerciseScreen';
+import AlphabetScreen from '../screens/AlphabetScreen';
+import NumbersScreen from '../screens/NumbersScreen';
+import ShapesScreen from '../screens/ShapesScreen';
+import ColorsScreen from '../screens/ColorsScreen';
+import PoemsScreen from '../screens/PoemsScreen';
+import MyFamScreen from '../screens/MyFamScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,18 +48,6 @@ const NavigationDrawerStructure = props => {
   );
 };
 
-const getHeaderTitle = route => {
-  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
-  switch (routeName) {
-    case 'HomeScreen':
-      return 'Home';
-    case 'ExploreScreen':
-      return 'Explore';
-    case 'TabStack':
-      return 'Home';
-  }
-};
-
 const TabStack = () => {
   return (
     <Tab.Navigator
@@ -64,10 +56,7 @@ const TabStack = () => {
         activeTintColor: '#FFFFFF',
         inactiveTintColor: '#F8F8F8',
         style: {
-          backgroundColor: '#f4511e',
-        },
-        labelStyle: {
-          textAlign: 'center',
+          backgroundColor: '#68f2b4',
         },
         indicatorStyle: {
           borderBottomColor: '#87B56A',
@@ -78,28 +67,24 @@ const TabStack = () => {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home Screen',
-          /*tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons
-             name="home"
-             color={color}
-             size={size}
-            />
-          ),*/
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
         }}
       />
       <Tab.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
+        name="ExerciseScreen"
+        component={ExerciseScreen}
         options={{
-          tabBarLabel: 'Profile Screen',
-          /*tabBarIcon: ({color, size}) => (
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons
-             name="settings"
-             color={color}
-             size={size}
+              name="script-text"
+              color={color}
+              size={size}
             />
-          ),*/
+          ),
         }}
       />
     </Tab.Navigator>
@@ -107,22 +92,34 @@ const TabStack = () => {
 };
 
 const HomeScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
         name="TabStack"
         component={TabStack}
-        options={({route}) => ({
-          headerTitle: getHeaderTitle(route),
+        options={() => ({
+          headerTitle: '',
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
           headerStyle: {
-            backgroundColor: '#f4511e', //Set Header color
-          },
-          headerTintColor: '#fff', //Set Header text color
-          headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            backgroundColor: '#68f2b4',
           },
         })}
       />
@@ -130,28 +127,253 @@ const HomeScreenStack = ({navigation}) => {
   );
 };
 
-const SettingScreenStack = ({navigation}) => {
+const AlphabetScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
   return (
-    <Stack.Navigator
-      initialRouteName="SecondPage"
-      screenOptions={{
-        headerLeft: () => (
-          <NavigationDrawerStructure navigationProps={navigation} />
-        ),
-        headerStyle: {
-          backgroundColor: '#f4511e', //Set Header color
-        },
-        headerTintColor: '#fff', //Set Header text color
-        headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
-        },
-      }}>
+    <Stack.Navigator initialRouteName="AlphabetScreen">
       <Stack.Screen
-        name="ExerciseScreen"
-        component={ExerciseScreen}
-        options={{
-          title: 'Setting', //Set Header Title
-        }}
+        name="AlphabetStack"
+        component={AlphabetScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const PhrasesScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="PhrasesScreen">
+      <Stack.Screen
+        name="PhrasesStack"
+        component={PhrasesScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const NumbersScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="NumbersScreen">
+      <Stack.Screen
+        name="NumbersStack"
+        component={NumbersScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const ShapesScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="ShapesScreen">
+      <Stack.Screen
+        name="ShapesStack"
+        component={ShapesScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const ColorsScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="ColorsScreen">
+      <Stack.Screen
+        name="ColorsStack"
+        component={ColorsScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const PoemsScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="PoemsScreen">
+      <Stack.Screen
+        name="PoemsStack"
+        component={PoemsScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const MyFamScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="MyFamScreen">
+      <Stack.Screen
+        name="MyFamStack"
+        component={MyFamScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
       />
     </Stack.Navigator>
   );
@@ -161,18 +383,48 @@ const App = () => {
   return (
     <Drawer.Navigator
       drawerContentOptions={{
-        activeTintColor: '#e91e63',
-        itemStyle: {marginVertical: 5},
+        activeTintColor: '#68f2b4',
+        itemStyle: {marginVertical: 8},
       }}>
       <Drawer.Screen
         name="HomeScreenStack"
-        options={{drawerLabel: 'Home Screen Option'}}
+        options={{drawerLabel: 'Home'}}
         component={HomeScreenStack}
       />
       <Drawer.Screen
-        name="SettingScreenStack"
-        options={{drawerLabel: 'Setting Screen Option'}}
-        component={SettingScreenStack}
+        name="AlphabetScreenStack"
+        options={{drawerLabel: 'Alphabet'}}
+        component={AlphabetScreenStack}
+      />
+      <Drawer.Screen
+        name="PhrasesScreenStack"
+        options={{drawerLabel: 'Phrases'}}
+        component={PhrasesScreenStack}
+      />
+      <Drawer.Screen
+        name="NumbersScreenStack"
+        options={{drawerLabel: 'Numbers'}}
+        component={NumbersScreenStack}
+      />
+      <Drawer.Screen
+        name="ShapesScreenStack"
+        options={{drawerLabel: 'Shapes'}}
+        component={ShapesScreenStack}
+      />
+      <Drawer.Screen
+        name="ColorsScreenStack"
+        options={{drawerLabel: 'Colors'}}
+        component={ColorsScreenStack}
+      />
+      <Drawer.Screen
+        name="PoemsScreenStack"
+        options={{drawerLabel: 'Poems'}}
+        component={PoemsScreenStack}
+      />
+      <Drawer.Screen
+        name="FamilyScreenStack"
+        options={{drawerLabel: 'My Family'}}
+        component={MyFamScreenStack}
       />
     </Drawer.Navigator>
   );

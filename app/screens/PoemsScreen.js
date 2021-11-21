@@ -4,15 +4,15 @@ import {AuthContext} from '../navigation/AuthProvider';
 
 import FormButton from '../components/FormButton';
 
-const AddProstScreen = ({navigation}) => {
+const PoemsScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
     <View>
-      <Text>Welcome {user.email}</Text>
+      <Text>Shapes {user.email}</Text>
       <FormButton buttonTitle="Logout" onPress={() => logout()} />
     </View>
   );
 };
 
-export default AddProstScreen;
+export default PoemsScreen;

@@ -4,15 +4,15 @@ import {AuthContext} from '../navigation/AuthProvider';
 
 import FormButton from '../components/FormButton';
 
-const ChatScreen = ({navigation}) => {
+const NumbersScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
     <View>
-      <Text>Welcome {user.email}</Text>
+      <Text>Numbers {user.email}</Text>
       <FormButton buttonTitle="Logout" onPress={() => logout()} />
     </View>
   );
 };
 
-export default ChatScreen;
+export default NumbersScreen;

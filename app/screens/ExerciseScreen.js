@@ -21,7 +21,7 @@ const ExerciseScreen = ({navigation}) => {
               textAlign: 'center',
               marginBottom: 16,
             }}>
-            Setting Screen
+            Exercise Screen
           </Text>
           <Button
             onPress={() => navigation.navigate('HomeScreenStack')}

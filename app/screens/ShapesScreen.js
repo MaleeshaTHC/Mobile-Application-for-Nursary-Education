@@ -4,15 +4,15 @@ import {AuthContext} from '../navigation/AuthProvider';
 
 import FormButton from '../components/FormButton';
 
-const ProfileScreen = ({navigation}) => {
+const ShapesScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
     <View>
-      <Text>Profile {user.email}</Text>
+      <Text>Shapes {user.email}</Text>
       <FormButton buttonTitle="Logout" onPress={() => logout()} />
     </View>
   );
 };
 
-export default ProfileScreen;
+export default ShapesScreen;

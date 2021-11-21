@@ -4,15 +4,15 @@ import {AuthContext} from '../navigation/AuthProvider';
 
 import FormButton from '../components/FormButton';
 
-const EditProfileScreen = ({navigation}) => {
+const ColorsScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
     <View>
-      <Text>Welcome {user.email}</Text>
+      <Text>Colors {user.email}</Text>
       <FormButton buttonTitle="Logout" onPress={() => logout()} />
     </View>
   );
 };
 
-export default EditProfileScreen;
+export default ColorsScreen;

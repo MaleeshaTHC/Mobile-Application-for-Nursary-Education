@@ -1,28 +1,37 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Image, StyleSheet} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 
 const Dots = ({selected}) => {
   let backgroundColor;
   backgroundColor = selected ? 'rgba(0,0,0,0.8)' : 'rgba(0,0,0,0.3)';
   return (
-    <View style={{width: 5, height: 5, marginHorizontal: 3, backgroundColor}} />
+    <View
+      style={{
+        width: 40,
+        height: 2,
+        marginHorizontal: 3,
+        borderRadius: 5,
+        backgroundColor,
+      }}
+    />
   );
 };
 
 const Skip = ({...props}) => (
   <TouchableHighlight {...props} underlayColor={'none'}>
-    <Text>Skip</Text>
+    <Text style={styles.buttons}>Skip</Text>
   </TouchableHighlight>
 );
 const Next = ({...props}) => (
   <TouchableHighlight {...props} underlayColor={'none'}>
-    <Text>Next</Text>
+    <Text style={styles.buttons}>Next</Text>
   </TouchableHighlight>
 );
 const Done = ({...props}) => (
   <TouchableHighlight {...props} underlayColor={'none'}>
-    <Text>Done</Text>
+    <Text style={styles.buttons}>Done</Text>
   </TouchableHighlight>
 );
 
@@ -32,23 +41,42 @@ const OnboardingScreen = ({navigation}) => {
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
-      onSkip={() => navigation.replace('Login_Screen')}
-      onDone={() => navigation.navigate('Login_Screen')}
+      DotComponent={Dots}
+      onSkip={() => navigation.replace('Login')}
+      onDone={() => navigation.navigate('Login')}
       pages={[
         {
-          backgroundColor: '#fff',
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          backgroundColor: '#bee6e1',
+          image: (
+            <Image
+              style={styles.image}
+              source={require('../assets/images/onboarding1.png')}
+            />
+          ),
+          title: 'Little Kingdom Education',
+          subtitle: 'Fun & Bite Size Lessons',
         },
         {
-          backgroundColor: '#fff',
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          backgroundColor: '#f5e5ab',
+          image: (
+            <Image
+              style={styles.image}
+              source={require('../assets/images/onboarding2.png')}
+            />
+          ),
+          title: 'Learn Fundamentals of                 ENGLISH & MATH',
+          subtitle: 'With Smooth Lessons',
         },
         {
-          backgroundColor: '#fff',
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          backgroundColor: '#f7dae6',
+          image: (
+            <Image
+              style={styles.image}
+              source={require('../assets/images/onboarding3.png')}
+            />
+          ),
+          title: 'Get Better Everyday',
+          subtitle: 'With Basic Lessons',
         },
       ]}
     />
@@ -56,3 +84,15 @@ const OnboardingScreen = ({navigation}) => {
 };
 
 export default OnboardingScreen;
+
+const styles = StyleSheet.create({
+  image: {
+    width: 350,
+    height: 350,
+  },
+  buttons: {
+    fontSize: 22,
+    marginStart: 25,
+    marginEnd: 25,
+  },
+});
