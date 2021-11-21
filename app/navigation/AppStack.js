@@ -1,175 +1,181 @@
-import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+// Tab View inside Navigation Drawer
+// https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
+
+import 'react-native-gesture-handler';
+
+import * as React from 'react';
+import {View, TouchableOpacity, Image} from 'react-native';
+
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import HomeScreen from '../screens/HomeScreen';
-import ChatScreen from '../screens/ChatScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import AddPostScreen from '../screens/AddPostScreen';
-import MessagesScreen from '../screens/MessagesScreen';
-import EditProfileScreen from '../screens/EditProfileScreen';
+import ExerciseScreen from '../screens/ExerciseScreen';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
-const FeedStack = ({navigation}) => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="RN Social"
-      component={HomeScreen}
-      options={{
-        headerTitleAlign: 'center',
-        headerTitleStyle: {
-          color: '#2e64e5',
-          fontFamily: 'Kufam-SemiBoldItalic',
-          fontSize: 18,
-        },
-        headerStyle: {
-          shadowColor: '#fff',
-          elevation: 0,
-        },
-        headerRight: () => (
-          <View style={{marginRight: 10}}>
-            <FontAwesome5.Button
-              name="plus"
-              size={22}
-              backgroundColor="#fff"
-              color="#2e64e5"
-              onPress={() => navigation.navigate('AddPost')}
-            />
-          </View>
-        ),
-      }}
-    />
-    <Stack.Screen
-      name="AddPost"
-      component={AddPostScreen}
-      options={{
-        title: '',
-        headerTitleAlign: 'center',
-        headerStyle: {
-          backgroundColor: '#2e64e515',
-          shadowColor: '#2e64e515',
-          elevation: 0,
-        },
-        headerBackTitleVisible: false,
-        headerBackImage: () => (
-          <View style={{marginLeft: 15}}>
-            <Ionicons name="arrow-back" size={25} color="#2e64e5" />
-          </View>
-        ),
-      }}
-    />
-
-  </Stack.Navigator>
-);
-
-const MessageStack = ({navigation}) => (
-  <Stack.Navigator>
-    <Stack.Screen name="Messages" component={MessagesScreen} />
-    <Stack.Screen
-      name="Chat"
-      component={ChatScreen}
-      options={({route}) => ({
-        title: route.params.userName,
-        headerBackTitleVisible: false,
-      })}
-    />
-  </Stack.Navigator>
-);
-
-const ProfileStack = ({navigation}) => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Profile"
-      component={ProfileScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="EditProfile"
-      component={EditProfileScreen}
-      options={{
-        headerTitle: 'Edit Profile',
-        headerBackTitleVisible: false,
-        headerTitleAlign: 'center',
-        headerStyle: {
-          backgroundColor: '#fff',
-          shadowColor: '#fff',
-          elevation: 0,
-        },
-      }}
-    />
-  </Stack.Navigator>
-);
-
-const AppStack = () => {
-  const getTabBarVisibility = (route) => {
-    const routeName = route.state
-      ? route.state.routes[route.state.index].name
-      : '';
-
-    if (routeName === 'Chat') {
-      return false;
-    }
-    return true;
+const NavigationDrawerStructure = props => {
+  //Structure for the navigatin Drawer
+  const toggleDrawer = () => {
+    //Props to open/close the drawer
+    props.navigationProps.toggleDrawer();
   };
 
   return (
+    <View style={{flexDirection: 'row'}}>
+      <TouchableOpacity onPress={() => toggleDrawer()}>
+        {/*Donute Button Image */}
+        <Image
+          source={{
+            uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png',
+          }}
+          style={{width: 25, height: 25, marginLeft: 5}}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const getHeaderTitle = route => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+  switch (routeName) {
+    case 'HomeScreen':
+      return 'Home';
+    case 'ExploreScreen':
+      return 'Explore';
+    case 'TabStack':
+      return 'Home';
+  }
+};
+
+const TabStack = () => {
+  return (
     <Tab.Navigator
+      initialRouteName="HomeScreen"
       tabBarOptions={{
-        activeTintColor: '#2e64e5',
+        activeTintColor: '#FFFFFF',
+        inactiveTintColor: '#F8F8F8',
+        style: {
+          backgroundColor: '#f4511e',
+        },
+        labelStyle: {
+          textAlign: 'center',
+        },
+        indicatorStyle: {
+          borderBottomColor: '#87B56A',
+          borderBottomWidth: 2,
+        },
       }}>
       <Tab.Screen
-        name="Home"
-        component={FeedStack}
-        options={({route}) => ({
-          tabBarLabel: 'Home',
-          // tabBarVisible: route.state && route.state.index === 0,
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons
-              name="home-outline"
-              color={color}
-              size={size}
-            />
-          ),
-        })}
-      />
-      <Tab.Screen
-        name="Messages"
-        component={MessageStack}
-        options={({route}) => ({
-          tabBarVisible: getTabBarVisibility(route),
-          // Or Hide tabbar when push!
-          // https://github.com/react-navigation/react-navigation/issues/7677
-          // tabBarVisible: route.state && route.state.index === 0,
-          // tabBarLabel: 'Home',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons
-              name="chatbox-ellipses-outline"
-              color={color}
-              size={size}
-            />
-          ),
-        })}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileStack}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
-          // tabBarLabel: 'Home',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="person-outline" color={color} size={size} />
-          ),
+          tabBarLabel: 'Home Screen',
+          /*tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+             name="home"
+             color={color}
+             size={size}
+            />
+          ),*/
+        }}
+      />
+      <Tab.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: 'Profile Screen',
+          /*tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+             name="settings"
+             color={color}
+             size={size}
+            />
+          ),*/
         }}
       />
     </Tab.Navigator>
   );
 };
 
-export default AppStack;
+const HomeScreenStack = ({navigation}) => {
+  return (
+    <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Screen
+        name="TabStack"
+        component={TabStack}
+        options={({route}) => ({
+          headerTitle: getHeaderTitle(route),
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#f4511e', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const SettingScreenStack = ({navigation}) => {
+  return (
+    <Stack.Navigator
+      initialRouteName="SecondPage"
+      screenOptions={{
+        headerLeft: () => (
+          <NavigationDrawerStructure navigationProps={navigation} />
+        ),
+        headerStyle: {
+          backgroundColor: '#f4511e', //Set Header color
+        },
+        headerTintColor: '#fff', //Set Header text color
+        headerTitleStyle: {
+          fontWeight: 'bold', //Set Header text style
+        },
+      }}>
+      <Stack.Screen
+        name="ExerciseScreen"
+        component={ExerciseScreen}
+        options={{
+          title: 'Setting', //Set Header Title
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const App = () => {
+  return (
+    <Drawer.Navigator
+      drawerContentOptions={{
+        activeTintColor: '#e91e63',
+        itemStyle: {marginVertical: 5},
+      }}>
+      <Drawer.Screen
+        name="HomeScreenStack"
+        options={{drawerLabel: 'Home Screen Option'}}
+        component={HomeScreenStack}
+      />
+      <Drawer.Screen
+        name="SettingScreenStack"
+        options={{drawerLabel: 'Setting Screen Option'}}
+        component={SettingScreenStack}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+export default App;

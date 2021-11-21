@@ -1,70 +1,56 @@
-import React, {Component} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+// Tab View inside Navigation Drawer
+// https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
 
-export default class HomeScreen extends Component {
-  constructor() {
-    super();
-  }
+import * as React from 'react';
+import {Button, View, Text, SafeAreaView} from 'react-native';
 
-  NavigateTo = () => {
-    this.props.navigation.navigate('Navigation_Screen');
-  };
-
-  render() {
-    return (
-      <View style={styles.screen}>
-        <View style={styles.top_header}>
-          <Text style={styles.heading}>Little Kingdom</Text>
+const HomeScreen = ({navigation}) => {
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <View style={{flex: 1, padding: 16}}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 25,
+              textAlign: 'center',
+              marginBottom: 16,
+            }}>
+            Home Screen
+          </Text>
+          <Button
+            onPress={() => navigation.navigate('SettingScreenStack')}
+            title="Go to Setting Screen"
+          />
+          <Button
+            onPress={() => navigation.navigate('ExploreScreen')}
+            title="Go to Explore Screen"
+          />
         </View>
-        <View style={styles.header}>
-          <View style={styles.text_area}>
-            <Text>
-              text="Education, is a very different animal than it once was.
-              Especially for kids. Here is a the best learning app for kids to
-              help them learn more!"
-            </Text>
-          </View>
-        </View>
-        <View style={styles.footer} />
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center',
+            color: 'grey',
+          }}>
+          React Navigate Drawer with Top Tab
+        </Text>
+        <Text
+          style={{
+            fontSize: 16,
+            textAlign: 'center',
+            color: 'grey',
+          }}>
+          www.aboutreact.com
+        </Text>
       </View>
-    );
-  }
-}
+    </SafeAreaView>
+  );
+};
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-  },
-  top_header: {
-    flex: 1,
-    backgroundColor: '#46FCFC',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    flex: 1.8,
-    backgroundColor: '#46FCFC',
-    borderBottomRightRadius: 500,
-    height: 200,
-  },
-  text_area: {
-    marginTop: 140,
-    marginLeft: 20,
-  },
-  footer: {
-    flex: 0.5,
-    marginLeft: 100,
-  },
-  images: {
-    width: 120,
-    height: 120,
-    borderRadius: 120,
-    marginTop: 15,
-  },
-  heading: {
-    color: 'black',
-    fontSize: 29,
-    fontWeight: 'bold',
-    marginTop: 10,
-  },
-});
+export default HomeScreen;

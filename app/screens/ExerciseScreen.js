@@ -5,7 +5,7 @@
 import * as React from 'react';
 import {Button, View, Text, SafeAreaView} from 'react-native';
 
-const ProfileScreen = ({navigation}) => {
+const ExerciseScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, padding: 16}}>
@@ -21,15 +21,19 @@ const ProfileScreen = ({navigation}) => {
               textAlign: 'center',
               marginBottom: 16,
             }}>
-            Explore Screen
+            Setting Screen
           </Text>
           <Button
-            onPress={() => navigation.navigate('SettingScreen')}
-            title="Go to Setting Screen"
+            onPress={() => navigation.navigate('HomeScreenStack')}
+            title="Go to Home Stack"
           />
           <Button
             onPress={() => navigation.navigate('HomeScreen')}
             title="Go to Home Screen"
+          />
+          <Button
+            onPress={() => navigation.navigate('ExploreScreen')}
+            title="Go to Explore Screen"
           />
         </View>
         <Text
@@ -53,4 +57,4 @@ const ProfileScreen = ({navigation}) => {
   );
 };
 
-export default ProfileScreen;
+export default ExerciseScreen;
