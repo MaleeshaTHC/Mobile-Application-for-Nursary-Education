@@ -10,11 +10,11 @@ import {
   Animated,
 } from 'react-native';
 import {COLORS} from '../constants';
-import data from '../data/QuizData';
+import phrasesData from './phrasesData/phrasesData';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ExerciseScreen = ({navigation}) => {
-  const allQuestions = data;
+const PhrasesQuiz = ({navigation}) => {
+  const allQuestions = phrasesData;
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentOptionSelected, setCurrentOptionSelected] = useState(null);
   const [correctOption, setCorrectOption] = useState(null);
@@ -355,4 +355,4 @@ const ExerciseScreen = ({navigation}) => {
   );
 };
 
-export default ExerciseScreen;
+export default PhrasesQuiz;

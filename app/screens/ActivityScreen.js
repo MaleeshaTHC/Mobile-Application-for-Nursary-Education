@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
-import ActivityButton from '../components/ActivytyButton';
+import ActivityButton from '../components/ActivityButton';
 
 const ActivityScreen = ({navigation}) => {
   return (
@@ -13,19 +13,19 @@ const ActivityScreen = ({navigation}) => {
       <View style={styles.button_container}>
         <ActivityButton
           buttonTitle="Alphabet"
-          onPress={() => navigation.navigate('ExerciseScreenStack')}
+          onPress={() => navigation.navigate('AlphabetQuiz')}
         />
         <ActivityButton
           buttonTitle="Phrases"
-          onPress={() => navigation.navigate('ExerciseScreenStack')}
+          onPress={() => navigation.navigate('PhrasesQuiz')}
         />
         <ActivityButton
           buttonTitle="Numbers"
-          onPress={() => navigation.navigate('ExerciseScreenStack')}
+          onPress={() => navigation.navigate('Activity')}
         />
         <ActivityButton
           buttonTitle="Shapes"
-          onPress={() => navigation.navigate('ExerciseScreenStack')}
+          onPress={() => navigation.navigate('AlphabetQuiz')}
         />
         <ActivityButton
           buttonTitle="Colors"

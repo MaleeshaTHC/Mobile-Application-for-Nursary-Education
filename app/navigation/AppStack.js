@@ -16,7 +16,6 @@ import {AuthContext} from '../navigation/AuthProvider';
 
 import HomeScreen from '../screens/HomeScreen';
 import PhrasesScreen from '../screens/PhrasesScreen';
-import ExerciseScreen from '../screens/ExerciseScreen';
 import AlphabetScreen from '../screens/AlphabetScreen';
 import NumbersScreen from '../screens/NumbersScreen';
 import ShapesScreen from '../screens/ShapesScreen';
@@ -24,6 +23,8 @@ import ColorsScreen from '../screens/ColorsScreen';
 import PoemsScreen from '../screens/PoemsScreen';
 import MyFamScreen from '../screens/MyFamScreen';
 import ActivityScreen from '../screens/ActivityScreen';
+import AlphabetQuiz from '../stores/AlphabetQuiz';
+import PhrasesQuiz from '../stores/PhrasesQuiz';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -76,7 +77,7 @@ const TabStack = () => {
       />
       <Tab.Screen
         name="ActivityScreen"
-        component={ActivityScreen}
+        component={ActivityStack}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -99,43 +100,6 @@ const HomeScreenStack = ({navigation}) => {
       <Stack.Screen
         name="TabStack"
         component={TabStack}
-        options={() => ({
-          headerTitle: '',
-          headerLeft: () => (
-            <NavigationDrawerStructure navigationProps={navigation} />
-          ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
-          headerStyle: {
-            backgroundColor: '#68f2b4',
-          },
-        })}
-      />
-    </Stack.Navigator>
-  );
-};
-
-const ExerciseScreenStack = ({navigation}) => {
-  const {user, logout} = useContext(AuthContext);
-  return (
-    <Stack.Navigator initialRouteName="ExerciseScreen">
-      <Stack.Screen
-        name="ExerciseStack"
-        component={ExerciseScreen}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -425,6 +389,38 @@ const MyFamScreenStack = ({navigation}) => {
   );
 };
 
+function ActivityStack({navigation}) {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="ActivityScreen">
+      <Stack.Screen
+        name="ActivityScreen"
+        component={ActivityScreen}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+      <Stack.Screen
+        name="AlphabetQuiz"
+        component={AlphabetQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+      <Stack.Screen
+        name="PhrasesQuiz"
+        component={PhrasesQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+    </Stack.Navigator>
+  );
+}
+
 const App = () => {
   return (
     <Drawer.Navigator
@@ -471,11 +467,6 @@ const App = () => {
         name="FamilyScreenStack"
         options={{drawerLabel: 'My Family'}}
         component={MyFamScreenStack}
-      />
-      <Drawer.Screen
-        name="ExerciseScreenStack"
-        options={{drawerLabel: 'Exercise'}}
-        component={ExerciseScreenStack}
       />
     </Drawer.Navigator>
   );

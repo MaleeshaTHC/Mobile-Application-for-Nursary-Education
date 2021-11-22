@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-export default data = [
+export default alphabetData = [
   {
-    question: 'What’s the biggest planet in our solar system?',
+    question: 'What’s the Name?',
     options: ['Jupiter', 'Saturn', 'Neptune', 'Mercury'],
     correct_option: 'Jupiter',
   },
