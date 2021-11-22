@@ -1,10 +1,12 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 // Tab View inside Navigation Drawer
 // https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
 
 import 'react-native-gesture-handler';
 
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {View, TouchableOpacity, Image, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -21,13 +23,13 @@ import ShapesScreen from '../screens/ShapesScreen';
 import ColorsScreen from '../screens/ColorsScreen';
 import PoemsScreen from '../screens/PoemsScreen';
 import MyFamScreen from '../screens/MyFamScreen';
+import ActivityScreen from '../screens/ActivityScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
 const NavigationDrawerStructure = props => {
-  //Structure for the navigatin Drawer
   const toggleDrawer = () => {
     //Props to open/close the drawer
     props.navigationProps.toggleDrawer();
@@ -36,7 +38,6 @@ const NavigationDrawerStructure = props => {
   return (
     <View style={{flexDirection: 'row'}}>
       <TouchableOpacity onPress={() => toggleDrawer()}>
-        {/*Donute Button Image */}
         <Image
           source={{
             uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png',
@@ -74,8 +75,8 @@ const TabStack = () => {
         }}
       />
       <Tab.Screen
-        name="ExerciseScreen"
-        component={ExerciseScreen}
+        name="ActivityScreen"
+        component={ActivityScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -104,7 +105,45 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const ExerciseScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="ExerciseScreen">
+      <Stack.Screen
+        name="ExerciseStack"
+        component={ExerciseScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -140,7 +179,8 @@ const AlphabetScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -176,7 +216,8 @@ const PhrasesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -212,7 +253,8 @@ const NumbersScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -248,7 +290,8 @@ const ShapesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -284,7 +327,8 @@ const ColorsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -320,7 +364,8 @@ const PoemsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -356,7 +401,8 @@ const MyFamScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerRight: ({navigation}) => (
-            <TouchableOpacity onPress={() => logout()}
+            <TouchableOpacity
+              onPress={() => logout()}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -425,6 +471,11 @@ const App = () => {
         name="FamilyScreenStack"
         options={{drawerLabel: 'My Family'}}
         component={MyFamScreenStack}
+      />
+      <Drawer.Screen
+        name="ExerciseScreenStack"
+        options={{drawerLabel: 'Exercise'}}
+        component={ExerciseScreenStack}
       />
     </Drawer.Navigator>
   );

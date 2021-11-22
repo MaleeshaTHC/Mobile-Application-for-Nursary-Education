@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
 
-const FormButton = ({buttonTitle, ...rest}) => {
+const ActivityButton = ({buttonTitle, ...rest}) => {
   return (
     <TouchableOpacity style={styles.buttonContainer} {...rest}>
       <Text style={styles.buttonText}>{buttonTitle}</Text>
@@ -10,21 +10,21 @@ const FormButton = ({buttonTitle, ...rest}) => {
   );
 };
 
-export default FormButton;
+export default ActivityButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 25,
-    width: '90%',
-    height: windowHeight / 15,
+    width: '70%',
+    height: windowHeight / 10,
     backgroundColor: '#83e6b9',
-    padding: 10,
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 13,
+    borderRadius: 20,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#228257',
   },

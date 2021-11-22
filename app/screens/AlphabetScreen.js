@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext, useState} from 'react';
 import {View, Text} from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
@@ -10,7 +11,10 @@ const AlphabetScreen = ({navigation}) => {
   return (
     <View>
       <Text>Alphabet {user.email}</Text>
-      <FormButton buttonTitle="Logout" onPress={() => logout()} />
+      <FormButton
+        buttonTitle="Logout"
+        onPress={() => navigation.navigate('ExerciseScreenStack')}
+      />
     </View>
   );
 };
