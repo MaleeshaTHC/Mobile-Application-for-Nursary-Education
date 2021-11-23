@@ -28,7 +28,7 @@ const PhrasesQuiz = ({navigation}) => {
     setCurrentOptionSelected(selectedOption);
     setCorrectOption(correct_option);
     setIsOptionsDisabled(true);
-    if (selectedOption === correct_option) {
+    if (selectedOption == correct_option) {
       // Set Score
       setScore(score + 1);
     }
@@ -36,7 +36,7 @@ const PhrasesQuiz = ({navigation}) => {
     setShowNextButton(true);
   };
   const handleNext = () => {
-    if (currentQuestionIndex === allQuestions.length - 1) {
+    if (currentQuestionIndex == allQuestions.length - 1) {
       // Last Question
       // Show Score Modal
       setShowScoreModal(true);
