@@ -10,11 +10,11 @@ import {
   Animated,
 } from 'react-native';
 import {COLORS} from '../constants';
-import alphabetData from './alphabetData/alphabetData';
+import numbersData from './numbersData/numbersData';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const AlphabetQuiz = ({navigation}) => {
-  const allQuestions = alphabetData;
+const NumbersQuiz = ({navigation}) => {
+  const allQuestions = numbersData;
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentOptionSelected, setCurrentOptionSelected] = useState(null);
   const [correctOption, setCorrectOption] = useState(null);
@@ -28,7 +28,7 @@ const AlphabetQuiz = ({navigation}) => {
     setCurrentOptionSelected(selectedOption);
     setCorrectOption(correct_option);
     setIsOptionsDisabled(true);
-    if (selectedOption === correct_option) {
+    if (selectedOption == correct_option) {
       // Set Score
       setScore(score + 1);
     }
@@ -36,7 +36,7 @@ const AlphabetQuiz = ({navigation}) => {
     setShowNextButton(true);
   };
   const handleNext = () => {
-    if (currentQuestionIndex === allQuestions.length - 1) {
+    if (currentQuestionIndex == allQuestions.length - 1) {
       // Last Question
       // Show Score Modal
       setShowScoreModal(true);
@@ -355,4 +355,4 @@ const AlphabetQuiz = ({navigation}) => {
   );
 };
 
-export default AlphabetQuiz;
+export default NumbersQuiz;

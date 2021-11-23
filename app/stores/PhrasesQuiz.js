@@ -330,7 +330,7 @@ const PhrasesQuiz = ({navigation}) => {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => navigation.navigate('HomeScreen')}
+                onPress={() => navigation.navigate('ActivityScreen')}
                 style={{
                   backgroundColor: COLORS.accent,
                   padding: 20,

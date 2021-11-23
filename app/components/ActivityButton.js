@@ -15,8 +15,8 @@ export default ActivityButton;
 const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 25,
-    width: '70%',
-    height: windowHeight / 10,
+    width: '65%',
+    height: windowHeight / 11,
     backgroundColor: '#83e6b9',
     padding: 20,
     alignItems: 'center',
@@ -24,8 +24,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   buttonText: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: 'bold',
     color: '#228257',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

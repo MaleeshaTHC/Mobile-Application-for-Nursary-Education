@@ -51,7 +51,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   safearea: {
-    flex: 1,    
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',

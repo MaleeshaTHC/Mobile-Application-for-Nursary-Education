@@ -25,6 +25,9 @@ import MyFamScreen from '../screens/MyFamScreen';
 import ActivityScreen from '../screens/ActivityScreen';
 import AlphabetQuiz from '../stores/AlphabetQuiz';
 import PhrasesQuiz from '../stores/PhrasesQuiz';
+import NumbersQuiz from '../stores/NumbersQuiz';
+import ShapesQuiz from '../stores/NumbersQuiz';
+import ColorsQuiz from '../stores/ColorsQuiz';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -163,6 +166,35 @@ const AlphabetScreenStack = ({navigation}) => {
           },
         })}
       />
+      <Stack.Screen
+        name="AlphabetQuiz"
+        component={AlphabetQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
     </Stack.Navigator>
   );
 };
@@ -174,6 +206,35 @@ const PhrasesScreenStack = ({navigation}) => {
       <Stack.Screen
         name="PhrasesStack"
         component={PhrasesScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+      <Stack.Screen
+        name="PhrasesQuiz"
+        component={PhrasesQuiz}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -237,6 +298,35 @@ const NumbersScreenStack = ({navigation}) => {
           },
         })}
       />
+      <Stack.Screen
+        name="NumbersQuiz"
+        component={NumbersQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
     </Stack.Navigator>
   );
 };
@@ -274,6 +364,35 @@ const ShapesScreenStack = ({navigation}) => {
           },
         })}
       />
+      <Stack.Screen
+        name="ShapesQuiz"
+        component={ShapesQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
     </Stack.Navigator>
   );
 };
@@ -285,6 +404,35 @@ const ColorsScreenStack = ({navigation}) => {
       <Stack.Screen
         name="ColorsStack"
         component={ColorsScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerRight: ({navigation}) => (
+            <TouchableOpacity
+              onPress={() => logout()}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 15,
+              }}>
+              <MaterialCommunityIcons
+                name="logout"
+                color={'#FFFFFF'}
+                size={25}
+              />
+              <Text style={{color: '#fff'}}>Logout</Text>
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: '#68f2b4',
+          },
+        })}
+      />
+      <Stack.Screen
+        name="ColorsQuiz"
+        component={ColorsQuiz}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -412,6 +560,30 @@ function ActivityStack({navigation}) {
       <Stack.Screen
         name="PhrasesQuiz"
         component={PhrasesQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+      <Stack.Screen
+        name="NumbersQuiz"
+        component={NumbersQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+      <Stack.Screen
+        name="ShapesQuiz"
+        component={ShapesQuiz}
+        options={() => ({
+          headerTitle: '',
+          headerShown: false,
+        })}
+      />
+      <Stack.Screen
+        name="ColorsQuiz"
+        component={ColorsQuiz}
         options={() => ({
           headerTitle: '',
           headerShown: false,

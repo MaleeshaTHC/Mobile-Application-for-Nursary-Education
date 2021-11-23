@@ -1,33 +1,33 @@
 /* eslint-disable no-undef */
 export default alphabetData = [
   {
-    question: 'What’s the Name?',
-    options: ['Jupiter', 'Saturn', 'Neptune', 'Mercury'],
-    correct_option: 'Jupiter',
+    question: 'What’s the last letter of word CAT?',
+    options: ['T', 'A', 'C', 'E'],
+    correct_option: 'T',
   },
   {
-    question: 'What attraction in India is one of the famus in the world?',
-    options: ['Chand Minar', 'Taj Mahal', 'Stadium'],
-    correct_option: 'Taj Mahal',
+    question: 'What’s the word which is not begin with letter "A" ?',
+    options: ['Apple', 'Mango', 'Ant', 'Axe'],
+    correct_option: 'Mango',
   },
   {
-    question: 'What land animal can open its mouth the widest?',
-    options: ['Alligator', 'Crocodile', 'Baboon', 'Hippo'],
-    correct_option: 'Hippo',
+    question: 'What’s the letter which is not in the word "MOTHER" ?',
+    options: ['E', 'O', 'M', 'W'],
+    correct_option: 'W',
   },
   {
-    question: 'What is the largest animal on Earth?',
+    question: 'Select the suitable letter collection match with the givin word. "BUTTERFLY" ',
     options: [
-      'The African elephant',
-      'The blue whale',
-      'The sperm whale',
-      'The giant squid',
+      'B T U T R E F L Y',
+      'Y L F R E T T U B',
+      'B U T T E R F L Y',
+      'L F Y B U T T E R',
     ],
-    correct_option: 'The blue whale',
+    correct_option: 'B U T T E R F L Y',
   },
   {
-    question: 'What is the only flying mammal?',
-    options: ['The bat', 'The flying squirrel', 'The bald eagle', 'The colugo'],
-    correct_option: 'The bat',
+    question: 'Select the un-suitable letter collection match with the givin word. "RAT',
+    options: ['MAT', 'RAT', 'ART', 'TAR'],
+    correct_option: 'MAT',
   },
 ];

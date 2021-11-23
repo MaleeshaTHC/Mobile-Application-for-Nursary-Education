@@ -21,15 +21,15 @@ const ActivityScreen = ({navigation}) => {
         />
         <ActivityButton
           buttonTitle="Numbers"
-          onPress={() => navigation.navigate('Activity')}
+          onPress={() => navigation.navigate('NumbersQuiz')}
         />
         <ActivityButton
           buttonTitle="Shapes"
-          onPress={() => navigation.navigate('AlphabetQuiz')}
+          onPress={() => navigation.navigate('ShapesQuiz')}
         />
         <ActivityButton
           buttonTitle="Colors"
-          onPress={() => navigation.navigate('ExerciseScreenStack')}
+          onPress={() => navigation.navigate('ColorsQuiz')}
         />
       </View>
     </SafeAreaView>

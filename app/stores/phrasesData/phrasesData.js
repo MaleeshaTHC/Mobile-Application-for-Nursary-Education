@@ -1,33 +1,53 @@
 /* eslint-disable no-undef */
 export default phrasesData = [
   {
-    question: 'What’s the Name?',
-    options: ['Jupiter', 'Saturn', 'Neptune', 'Mercury'],
-    correct_option: 'Jupiter',
+    question: 'What we say in the morning?',
+    options: [
+      'Good Evening !',
+      'Good Night !',
+      'Good Morning !',
+      'Good Afternoon !',
+    ],
+    correct_option: 'Good Morning !',
   },
   {
-    question: 'What attraction in India is one of the famus in the world?',
-    options: ['Chand Minar', 'Taj Mahal', 'Stadium'],
-    correct_option: 'Taj Mahal',
+    question: 'What we say when we go to look a patient?',
+    options: [
+      'Get well soon !',
+      'Good Evening !',
+      'Have a Good Day !',
+      'Nice to meet You !',
+    ],
+    correct_option: 'Get well soon !',
   },
   {
-    question: 'What land animal can open its mouth the widest?',
-    options: ['Alligator', 'Crocodile', 'Baboon', 'Hippo'],
+    question: 'What we say when we meet someone?',
+    options: [
+      'Get well soon !',
+      'Good Evening !',
+      'Have a Good Day !',
+      'Nice to meet You !',
+    ],
     correct_option: 'Hippo',
   },
   {
-    question: 'What is the largest animal on Earth?',
+    question: 'How can we say sorry?',
     options: [
-      'The African elephant',
-      'The blue whale',
-      'The sperm whale',
-      'The giant squid',
+      'It is my pleasure.',
+      'I am very sorry.',
+      'Thank You !',
+      'Have a Great one !',
     ],
     correct_option: 'The blue whale',
   },
   {
-    question: 'What is the only flying mammal?',
-    options: ['The bat', 'The flying squirrel', 'The bald eagle', 'The colugo'],
+    question: 'What is the phrase we can use to thanking?',
+    options: [
+      'It is my pleasure.',
+      'I am very sorry.',
+      'Thank You !',
+      'Have a Great one !',
+    ],
     correct_option: 'The bat',
   },
 ];
