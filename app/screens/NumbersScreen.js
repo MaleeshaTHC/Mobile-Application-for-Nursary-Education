@@ -14,7 +14,7 @@ export default class NumbersScreen extends Component {
   render() {
     return (
       <View style={styles.screen}>
-        <Text style={styles.heading}>Let's Learn Alphabet</Text>
+        <Text style={styles.heading}>Let's Learn Numbers</Text>
         <View style={styles.body}>
           <Slider_Num />
         </View>
@@ -33,12 +33,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: '#d0f7e6',
-  },
-  header: {
-    flex: 0.2,
-    backgroundColor: '#d0f7e6',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   body: {
     flex: 2,

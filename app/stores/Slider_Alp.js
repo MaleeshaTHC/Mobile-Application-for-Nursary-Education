@@ -189,14 +189,14 @@ const styles = StyleSheet.create({
   slider: {
     flex: 1,
     backgroundColor: '#d0f7e6',
-    marginTop: 20,
+    marginTop: 15,
   },
   navigator: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#d0f7e6',
-    marginBottom: 15,
+    marginBottom: 25,
   },
   item: {
     width: screenWidth - 55,

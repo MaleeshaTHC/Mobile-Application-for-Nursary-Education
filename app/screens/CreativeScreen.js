@@ -3,25 +3,45 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
 import Card from '../components/Card';
 
-export default class MyFamScreen extends Component {
+export default class CreativeScreen extends Component {
+  constructor() {
+    super();
+  }
+  NavigateToColors = () => {
+    this.props.navigation.navigate('ColorsScreen');
+  };
+  NavigateToPoems = () => {
+    this.props.navigation.navigate('PoemsScreen');
+  };
+  NavigateToColorsQuiz = () => {
+    this.props.navigation.navigate('ColorsQuiz');
+  };
   render() {
     return (
       <View style={styles.screen}>
         <View style={styles.header}>
-          <Text style={styles.heading}>Family Members</Text>
+          <Text style={styles.heading}>Improve Your Creativity</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>
             <Card
-              text={'Know your family members'}
-              main={'FAMILY'}
+              text={'Do you want to know Colors? Come try it !'}
+              main={'COLORS'}
+              onPress={this.NavigateToColors}
               name={'tags'}
             />
             <Card
-              text={'Know your school members'}
-              main={'SCHOOL'}
+              text={'Do you want to know Poems? Come try it !'}
+              main={'POEMS'}
+              onPress={this.NavigateToPoems}
               name={'tags'}
             />
+            <Card
+              main={'Quiz of Colors'}
+              onPress={this.NavigateToColorsQuiz}
+              name={'edit'}
+            />
+            <Card name={'edit'} />
           </View>
         </View>
       </View>

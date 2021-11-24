@@ -3,24 +3,51 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
 import Card from '../components/Card';
 
-export default class MyFamScreen extends Component {
+export default class MathsScreen extends Component {
+  constructor() {
+    super();
+  }
+  NavigateToAlphabet = () => {
+    this.props.navigation.navigate('AlphabetScreen');
+  };
+  NavigateToPhrases = () => {
+    this.props.navigation.navigate('PhrasesScreen');
+  };
+  NavigateToAlphabetQuiz = () => {
+    this.props.navigation.navigate('AlphabetQuiz');
+  };
+  NavigateToPhrasesQuiz = () => {
+    this.props.navigation.navigate('PhrasesQuiz');
+  };
   render() {
     return (
       <View style={styles.screen}>
         <View style={styles.header}>
-          <Text style={styles.heading}>Family Members</Text>
+          <Text style={styles.heading}>Happy English</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>
             <Card
-              text={'Know your family members'}
-              main={'FAMILY'}
+              text={'Do you want to know Alphabet? Come try it !'}
+              main={'ALPHABET'}
+              onPress={this.NavigateToAlphabet}
               name={'tags'}
             />
             <Card
-              text={'Know your school members'}
-              main={'SCHOOL'}
+              text={'Do you want to know Phrases? Come try it !'}
+              main={'PHRASES'}
+              onPress={this.NavigateToPhrases}
               name={'tags'}
+            />
+            <Card
+              main={'Quiz of Alphabet'}
+              onPress={this.NavigateToAlphabetQuiz}
+              name={'edit'}
+            />
+            <Card
+              main={'Quiz of Phrases'}
+              onPress={this.NavigateToPhrasesQuiz}
+              name={'edit'}
             />
           </View>
         </View>

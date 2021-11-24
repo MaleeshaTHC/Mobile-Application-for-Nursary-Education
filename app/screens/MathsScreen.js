@@ -36,7 +36,7 @@ export default class MathsScreen extends Component {
             <Card
               text={'Do you want to know Shapes? Come try it !'}
               main={'SHAPES'}
-              onPress={this.NavigateToNumbers}
+              onPress={this.NavigateToShapes}
               name={'tags'}
             />
             <Card

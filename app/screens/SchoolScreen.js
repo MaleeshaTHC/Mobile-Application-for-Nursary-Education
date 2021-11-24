@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
 import Card from '../components/Card';
 
-export default class MyFamScreen extends Component {
+export default class SchoolScreen extends Component {
   render() {
     return (
       <View style={styles.screen}>
         <View style={styles.header}>
-          <Text style={styles.heading}>Family Members</Text>
+          <Text style={styles.heading}>School Members</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>

@@ -3,23 +3,35 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
 import Card from '../components/Card';
 
-export default class MyFamScreen extends Component {
+export default class CommunityScreen extends Component {
+  constructor() {
+    super();
+  }
+  NavigateToMyFam = () => {
+    this.props.navigation.navigate('MyFamScreen');
+  };
+  NavigateToSchool = () => {
+    this.props.navigation.navigate('SchoolScreen');
+  };
+
   render() {
     return (
       <View style={styles.screen}>
         <View style={styles.header}>
-          <Text style={styles.heading}>Family Members</Text>
+          <Text style={styles.heading}>Community</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>
             <Card
               text={'Know your family members'}
               main={'FAMILY'}
+              onPress={this.NavigateToMyFam}
               name={'tags'}
             />
             <Card
               text={'Know your school members'}
               main={'SCHOOL'}
+              onPress={this.NavigateToSchool}
               name={'tags'}
             />
           </View>
