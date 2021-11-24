@@ -32,21 +32,27 @@ export default AlphabetScreen;
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    backgroundColor: '#d0f7e6',
   },
   body: {
-    flex: 5,
+    flex: 8.5,
     alignItems: 'center',
     justifyContent: 'center',
   },
   header: {
-    flex: 0.8,
+    flex: 2,
+    backgroundColor: '#68f2b4',
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
   },
   bottom: {
-    flex: 1.2,
+    flex: 0.9,
+    backgroundColor: '#d0f7e6',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 30,
   },
   text: {
     fontSize: 33,

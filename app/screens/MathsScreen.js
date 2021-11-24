@@ -31,21 +31,23 @@ export default class MathsScreen extends Component {
               text={'Do you want to know Numbers? Come try it !'}
               main={'NUMBERS'}
               onPress={this.NavigateToNumbers}
+              name={'tags'}
             />
             <Card
-              text={'Do you want to know about Shapes?      Come try it !'}
+              text={'Do you want to know Shapes? Come try it !'}
               main={'SHAPES'}
-              onPress={this.NavigateToShapes}
+              onPress={this.NavigateToNumbers}
+              name={'tags'}
             />
             <Card
-              text={'Try your Knowledge'}
               main={'Quiz of Numbers'}
               onPress={this.NavigateToNumbersQuiz}
+              name={'edit'}
             />
             <Card
-              text={'Try your Knowledge'}
               main={'Quiz of Shapes'}
               onPress={this.NavigateToShapesQuiz}
+              name={'edit'}
             />
           </View>
         </View>

@@ -11,7 +11,8 @@ import {
 
 const ENTRIES1 = [
   {
-    illustration: 'https://cdn2.vectorstock.com/i/1000x1000/70/46/cartoon-two-boys-holding-abc-text-on-nature-vector-32307046.jpg',
+    illustration:
+      'https://image.freepik.com/free-vector/kids-children-boys-girl-abc-school-illustration_215960-53.jpg',
   },
   {
     illustration:
@@ -183,25 +184,31 @@ export default Slider_Alp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#d0f7e6',
   },
   slider: {
-    flex: 5,
+    flex: 1,
+    backgroundColor: '#d0f7e6',
+    marginTop: 20,
   },
   navigator: {
-    flex: 0.2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 30,
+    backgroundColor: '#d0f7e6',
+    marginBottom: 15,
   },
   item: {
     width: screenWidth - 55,
-    height: screenWidth + 70,
+    height: screenWidth + 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#d0f7e6',
   },
   imageContainer: {
     flex: 1,
     marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
-    backgroundColor: '#d0f7e6',
+    backgroundColor: 'white',
     borderRadius: 20,
     width: 370,
   },
@@ -221,22 +228,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     textAlignVertical: 'auto',
-    marginTop: 15,
   },
   card1: {
     width: 100,
     height: 50,
     alignItems: 'center',
     backgroundColor: '#83e6b9',
-    margin: 50,
     borderRadius: 15,
+    marginRight: 50,
   },
   card2: {
     width: 100,
     height: 50,
     alignItems: 'center',
     backgroundColor: '#83e6b9',
-    margin: 50,
     borderRadius: 15,
   },
 });

@@ -12,7 +12,12 @@ export default function NavigationCard({text, image, onPress}) {
     <ImageBackground
       style={styles.card}
       source={image}
-      imageStyle={{borderRadius: 30}}>
+      imageStyle={{
+        width: 350,
+        borderRadius: 50,
+        marginLeft: 25,
+        marginTop: 40,
+      }}>
       <TouchableHighlight style={styles.button} onPress={onPress}>
         <Text style={styles.textArea_text}>{text}</Text>
       </TouchableHighlight>
@@ -22,20 +27,21 @@ export default function NavigationCard({text, image, onPress}) {
 
 const styles = StyleSheet.create({
   textArea_text: {
-    color: 'black',
+    color: '#228257',
     fontSize: 27,
+    fontWeight: 'bold',
   },
   card: {
-    width: 380,
-    height: 280,
+    width: 400,
+    height: 300,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: 85,
+    marginBottom: 80,
   },
   button: {
-    width: 350,
-    height: 80,
+    width: 250,
+    height: 65,
     backgroundColor: '#83e6b9',
     alignItems: 'center',
     justifyContent: 'center',
@@ -45,6 +51,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 30,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    marginTop: 250,
+    marginTop: 390,
+    marginLeft: 80,
   },
 });

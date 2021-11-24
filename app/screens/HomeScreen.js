@@ -1,12 +1,14 @@
+/* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useContext} from 'react';
 import {
-  View,
+  ImageBackground,
   Text,
   SafeAreaView,
   Image,
   StyleSheet,
   ScrollView,
+  View,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import NavigationCard from '../components/NavigationCard';
@@ -21,27 +23,30 @@ const HomeScreen = ({navigation}) => {
       />
       <Text style={styles.text}>Welcome</Text>
       <Text style={styles.text}>{user.email}</Text>
-
-      <ScrollView>
-        <View style={styles.card_container}>
-          <View>
-            <NavigationCard
-              text={'Click'}
-              image={require('../assets/images/logo.png')}
-              onPress={() => alert('Clicked')}
-            />
-            <NavigationCard
-              text={'Click'}
-              image={require('../assets/images/logo.png')}
-              onPress={() => alert('Clicked')}
-            />
-            <NavigationCard
-              text={'Click'}
-              image={require('../assets/images/logo.png')}
-              onPress={() => alert('Clicked')}
-            />
-          </View>
-        </View>
+      <Text />
+      <Text style={styles.heading}>Let's Start !</Text>
+      <Text />
+      <ScrollView style={{backgroundColor: '#d0f7e6'}}>
+        <NavigationCard
+          text={"Let's Go !"}
+          image={require('../assets/images/english.jpg')}
+          onPress={() => navigation.navigate('AlphabetScreen')}
+        />
+        <NavigationCard
+          text={"Let's Go !"}
+          image={require('../assets/images/maths.jpg')}
+          onPress={() => navigation.navigate('MathsScreen')}
+        />
+        <NavigationCard
+          text={"Let's Go !"}
+          image={require('../assets/images/crafts.jpg')}
+          onPress={() => alert('Clicked')}
+        />
+        <NavigationCard
+          text={"Let's Go !"}
+          image={require('../assets/images/social.jpg')}
+          onPress={() => alert('Clicked')}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -52,27 +57,33 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   safearea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-  top: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    marginBottom: 550,
+    backgroundColor: '#d0f7e6',
   },
   scrollview: {
-    flex: 2,
+    flex: 3,
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginTop: 50,
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 50,
+    height: 50,
     borderRadius: 80,
-    borderColor: 'green',
+    marginLeft: 355,
+    marginTop: 20,
   },
   text: {
     fontSize: 20,
+    textAlign: 'right',
+    marginRight: 20,
+  },
+  heading: {
+    fontSize: 40,
+    marginTop: 10,
+    color: '#228257',
+    textAlign: 'center',
   },
 });

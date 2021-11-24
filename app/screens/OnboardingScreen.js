@@ -53,8 +53,8 @@ const OnboardingScreen = ({navigation}) => {
               source={require('../assets/images/onboarding1.png')}
             />
           ),
-          title: 'Little Kingdom Education',
-          subtitle: 'Fun & Bite Size Lessons',
+          title: 'Learn',
+          subtitle: 'By using our mini lessons',
         },
         {
           backgroundColor: '#f5e5ab',
@@ -64,8 +64,8 @@ const OnboardingScreen = ({navigation}) => {
               source={require('../assets/images/onboarding2.png')}
             />
           ),
-          title: 'Learn Fundamentals of                 ENGLISH & MATH',
-          subtitle: 'With Smooth Lessons',
+          title: 'Practice',
+          subtitle: 'With our cute quizzes',
         },
         {
           backgroundColor: '#f7dae6',
@@ -75,8 +75,8 @@ const OnboardingScreen = ({navigation}) => {
               source={require('../assets/images/onboarding3.png')}
             />
           ),
-          title: 'Get Better Everyday',
-          subtitle: 'With Basic Lessons',
+          title: 'Build',
+          subtitle: 'Your Knowledge',
         },
       ]}
     />
