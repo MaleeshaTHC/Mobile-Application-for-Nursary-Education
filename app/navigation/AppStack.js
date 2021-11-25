@@ -34,6 +34,7 @@ import CommunityScreen from '../screens/CommunityScreen';
 import EnglishScreen from '../screens/EnglishScreen';
 import SchoolScreen from '../screens/SchoolScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -48,11 +49,11 @@ const NavigationDrawerStructure = props => {
   return (
     <View style={{flexDirection: 'row'}}>
       <TouchableOpacity onPress={() => toggleDrawer()}>
-        <Image
-          source={{
-            uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png',
-          }}
-          style={{width: 25, height: 25, marginLeft: 5}}
+        <MaterialCommunityIcons
+          name="reorder-horizontal"
+          color={'#228257'}
+          size={25}
+          style={{marginLeft: 10}}
         />
       </TouchableOpacity>
     </View>
@@ -64,13 +65,13 @@ const TabStack = () => {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        activeTintColor: '#FFFFFF',
-        inactiveTintColor: '#F8F8F8',
+        activeTintColor: '#228257',
+        inactiveTintColor: '#228125',
         style: {
-          backgroundColor: '#68f2b4',
+          backgroundColor: '#d0f7e6',
         },
         indicatorStyle: {
-          borderBottomColor: '#87B56A',
+          borderBottomColor: '#d0f7e6',
           borderBottomWidth: 2,
         },
       }}>
@@ -114,24 +115,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -143,24 +128,21 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
+          headerStyle: {
+            backgroundColor: '#d0f7e6',
+          },
+        })}
+      />
+      <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -172,24 +154,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -201,24 +167,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -230,24 +180,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -259,24 +193,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -288,24 +206,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -317,24 +219,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -346,24 +232,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -375,24 +245,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -404,24 +258,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -433,24 +271,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -462,24 +284,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -491,24 +297,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -520,24 +310,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -549,24 +323,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -578,24 +336,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -607,24 +349,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -636,24 +362,8 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -673,24 +383,8 @@ const AlphabetScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -702,24 +396,8 @@ const AlphabetScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -739,24 +417,8 @@ const PhrasesScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -768,24 +430,8 @@ const PhrasesScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -805,24 +451,8 @@ const NumbersScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -834,24 +464,8 @@ const NumbersScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -871,24 +485,8 @@ const ShapesScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -900,24 +498,8 @@ const ShapesScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -937,24 +519,8 @@ const ColorsScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -966,24 +532,8 @@ const ColorsScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -1003,24 +553,8 @@ const PoemsScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -1040,24 +574,8 @@ const MyFamScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -1077,24 +595,8 @@ const SchoolScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
-          ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -1114,24 +616,42 @@ const ProfileScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerRight: ({navigation}) => (
-            <TouchableOpacity
-              onPress={() => logout()}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 15,
-              }}>
-              <MaterialCommunityIcons
-                name="logout"
-                color={'#FFFFFF'}
-                size={25}
-              />
-              <Text style={{color: '#fff'}}>Logout</Text>
-            </TouchableOpacity>
+          headerStyle: {
+            backgroundColor: '#d0f7e6',
+          },
+        })}
+      />
+      <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#d0f7e6',
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const EditProfileScreenStack = ({navigation}) => {
+  const {user, logout} = useContext(AuthContext);
+  return (
+    <Stack.Navigator initialRouteName="ProfileScreen">
+      <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#d0f7e6',
           },
         })}
       />
@@ -1199,7 +719,7 @@ const App = () => {
   return (
     <Drawer.Navigator
       drawerContentOptions={{
-        activeTintColor: '#68f2b4',
+        activeTintColor: '#d0f7e6',
         itemStyle: {marginVertical: 8},
       }}>
       <Drawer.Screen
@@ -1251,6 +771,11 @@ const App = () => {
         name="ProfileScreenStack"
         options={{drawerLabel: 'Profile'}}
         component={ProfileScreenStack}
+      />
+      <Drawer.Screen
+        name="EditProfileScreenStack"
+        options={{drawerLabel: 'Edit Profile'}}
+        component={EditProfileScreenStack}
       />
     </Drawer.Navigator>
   );

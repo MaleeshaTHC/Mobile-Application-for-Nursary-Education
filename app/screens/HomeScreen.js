@@ -69,21 +69,21 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   logo: {
-    width: 50,
-    height: 50,
+    width: 80,
+    height: 80,
     borderRadius: 80,
-    marginLeft: 355,
-    marginTop: 20,
+    marginLeft: 330,
   },
   text: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'right',
     marginRight: 20,
   },
   heading: {
     fontSize: 40,
-    marginTop: 10,
+    marginTop: 30,
     color: '#228257',
     textAlign: 'center',
+    marginBottom: 25,
   },
 });

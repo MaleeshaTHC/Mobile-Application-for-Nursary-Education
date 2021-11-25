@@ -10,7 +10,7 @@ export const COLORS = {
   error: '#ff4444',
 
   black: '#171717',
-  white: '#FFFFFF',
+  white: '#228257',
   background: '#252C4A',
 };
 

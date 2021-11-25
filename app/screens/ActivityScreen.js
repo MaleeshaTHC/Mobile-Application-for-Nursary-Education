@@ -8,7 +8,7 @@ import ActivityButton from '../components/ActivityButton';
 
 const ActivityScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#d0f7e6'}}>
       <Text style={styles.heading}>Fun Activities</Text>
       <View style={styles.button_container}>
         <ActivityButton
@@ -46,8 +46,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button_container: {
+    flex: 3,
     marginTop: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
+    borderTopLeftRadius: 200,
+    borderTopRightRadius: 200,
   },
 });
