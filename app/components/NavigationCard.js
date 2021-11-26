@@ -28,8 +28,9 @@ export default function NavigationCard({text, image, onPress}) {
 const styles = StyleSheet.create({
   textArea_text: {
     color: '#228257',
-    fontSize: 27,
+    fontSize: 25,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   card: {
     width: 400,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    margin: 70,
+    marginBottom: 100,
   },
   button: {
     width: 250,

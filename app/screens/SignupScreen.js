@@ -12,7 +12,6 @@ import {
 import {AuthContext} from '../navigation/AuthProvider';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
-import SocialButton from '../components/SocialButton';
 
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();

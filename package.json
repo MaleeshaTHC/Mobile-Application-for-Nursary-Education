@@ -33,6 +33,7 @@
     "react-native-screens": "^3.9.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-vector-icons": "^9.0.0",
+    "reanimated-bottom-sheet": "^1.0.0-alpha.22",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -47,5 +48,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
   }
 }

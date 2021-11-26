@@ -34,6 +34,7 @@ import CommunityScreen from '../screens/CommunityScreen';
 import EnglishScreen from '../screens/EnglishScreen';
 import SchoolScreen from '../screens/SchoolScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import AddMarksScreen from '../screens/AddMarksScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
 
 const Stack = createStackNavigator();
@@ -123,19 +124,6 @@ const HomeScreenStack = ({navigation}) => {
       <Stack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
-        options={() => ({
-          headerTitle: '',
-          headerLeft: () => (
-            <NavigationDrawerStructure navigationProps={navigation} />
-          ),
-          headerStyle: {
-            backgroundColor: '#d0f7e6',
-          },
-        })}
-      />
-      <Stack.Screen
-        name="EditProfileScreen"
-        component={EditProfileScreen}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -357,6 +345,19 @@ const HomeScreenStack = ({navigation}) => {
       <Stack.Screen
         name="SchoolScreen"
         component={SchoolScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#d0f7e6',
+          },
+        })}
+      />
+      <Stack.Screen
+        name="AddMarksScreen"
+        component={AddMarksScreen}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -638,27 +639,6 @@ const ProfileScreenStack = ({navigation}) => {
   );
 };
 
-const EditProfileScreenStack = ({navigation}) => {
-  const {user, logout} = useContext(AuthContext);
-  return (
-    <Stack.Navigator initialRouteName="ProfileScreen">
-      <Stack.Screen
-        name="EditProfileScreen"
-        component={EditProfileScreen}
-        options={() => ({
-          headerTitle: '',
-          headerLeft: () => (
-            <NavigationDrawerStructure navigationProps={navigation} />
-          ),
-          headerStyle: {
-            backgroundColor: '#d0f7e6',
-          },
-        })}
-      />
-    </Stack.Navigator>
-  );
-};
-
 function ActivityStack({navigation}) {
   const {user, logout} = useContext(AuthContext);
   return (
@@ -771,11 +751,6 @@ const App = () => {
         name="ProfileScreenStack"
         options={{drawerLabel: 'Profile'}}
         component={ProfileScreenStack}
-      />
-      <Drawer.Screen
-        name="EditProfileScreenStack"
-        options={{drawerLabel: 'Edit Profile'}}
-        component={EditProfileScreenStack}
       />
     </Drawer.Navigator>
   );

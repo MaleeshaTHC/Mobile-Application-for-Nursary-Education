@@ -32,7 +32,7 @@ export default AlphabetScreen;
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
+    backgroundColor: '#ffff',
   },
   body: {
     flex: 8.5,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 2,
-    backgroundColor: '#68f2b4',
+    backgroundColor: '#d0f7e6',
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   bottom: {
     flex: 0.9,
-    backgroundColor: '#d0f7e6',
+    backgroundColor: '#ffff',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 30,
