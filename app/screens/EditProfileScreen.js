@@ -12,13 +12,14 @@ import {
   StyleSheet,
   Alert,
   Platform,
+  ScrollView,
 } from 'react-native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FormButton from '../components/FormButton';
+import {windowHeight, windowWidth} from '../constants/Dimensions';
 
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
@@ -28,7 +29,7 @@ import {AuthContext} from '../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 
-const EditProfileScreen = () => {
+const EditProfileScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
   const [image, setImage] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -193,7 +194,7 @@ const EditProfileScreen = () => {
   fall = new Animated.Value(1);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <BottomSheet
         ref={this.bs}
         snapPoints={[330, -5]}
@@ -224,11 +225,11 @@ const EditProfileScreen = () => {
                     ? image
                     : userData
                     ? userData.userImg ||
-                      'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'
-                    : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
+                      'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg'
+                    : 'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg',
                 }}
                 style={{height: 100, width: 100}}
-                imageStyle={{borderRadius: 15}}>
+                imageStyle={{borderRadius: 100}}>
                 <View
                   style={{
                     flex: 1,
@@ -255,14 +256,14 @@ const EditProfileScreen = () => {
           <Text style={{marginTop: 10, fontSize: 18, fontWeight: 'bold'}}>
             {userData ? userData.fname : ''} {userData ? userData.lname : ''}
           </Text>
-          {/* <Text>{user.uid}</Text> */}
+          <Text style={{marginBottom: 28}}>{user.uid}</Text>
         </View>
 
         <View style={styles.action}>
-          <FontAwesome name="user-o" color="#333333" size={20} />
+          <FontAwesome name="user-o" color="#228257" size={20} />
           <TextInput
             placeholder="First Name"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             autoCorrect={false}
             value={userData ? userData.fname : ''}
             onChangeText={txt => setUserData({...userData, fname: txt})}
@@ -270,10 +271,10 @@ const EditProfileScreen = () => {
           />
         </View>
         <View style={styles.action}>
-          <FontAwesome name="user-o" color="#333333" size={20} />
+          <FontAwesome name="user-o" color="#228257" size={20} />
           <TextInput
             placeholder="Last Name"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             value={userData ? userData.lname : ''}
             onChangeText={txt => setUserData({...userData, lname: txt})}
             autoCorrect={false}
@@ -281,12 +282,12 @@ const EditProfileScreen = () => {
           />
         </View>
         <View style={styles.action}>
-          <Ionicons name="ios-clipboard-outline" color="#333333" size={20} />
+          <Ionicons name="ios-clipboard-outline" color="#228257" size={20} />
           <TextInput
             multiline
             numberOfLines={3}
             placeholder="About Me"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             value={userData ? userData.about : ''}
             onChangeText={txt => setUserData({...userData, about: txt})}
             autoCorrect={true}
@@ -294,10 +295,10 @@ const EditProfileScreen = () => {
           />
         </View>
         <View style={styles.action}>
-          <Feather name="phone" color="#333333" size={20} />
+          <Feather name="phone" color="#228257" size={20} />
           <TextInput
             placeholder="Phone"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             keyboardType="number-pad"
             autoCorrect={false}
             value={userData ? userData.phone : ''}
@@ -307,10 +308,10 @@ const EditProfileScreen = () => {
         </View>
 
         <View style={styles.action}>
-          <FontAwesome name="globe" color="#333333" size={20} />
+          <FontAwesome name="globe" color="#228257" size={20} />
           <TextInput
             placeholder="Country"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             autoCorrect={false}
             value={userData ? userData.country : ''}
             onChangeText={txt => setUserData({...userData, country: txt})}
@@ -320,21 +321,37 @@ const EditProfileScreen = () => {
         <View style={styles.action}>
           <MaterialCommunityIcons
             name="map-marker-outline"
-            color="#333333"
+            color="#228257"
             size={20}
           />
           <TextInput
             placeholder="City"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#228257"
             autoCorrect={false}
             value={userData ? userData.city : ''}
             onChangeText={txt => setUserData({...userData, city: txt})}
             style={styles.textInput}
           />
         </View>
-        <FormButton buttonTitle="Update" onPress={handleUpdate} />
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 15,
+          }}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleUpdate}>
+            <Text style={styles.buttonText}>Update Profile</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('ProfileScreen')}>
+            <Text style={styles.buttonText}>Back to Profile</Text>
+          </TouchableOpacity>
+        </View>
       </Animated.View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -343,28 +360,20 @@ export default EditProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  commandButton: {
-    padding: 15,
-    borderRadius: 10,
-    backgroundColor: '#FF6347',
-    alignItems: 'center',
-    marginTop: 10,
+    backgroundColor: '#d0f7e6',
   },
   panel: {
     padding: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#d0f7e6',
     paddingTop: 20,
     width: '100%',
   },
   header: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#d0f7e6',
     shadowColor: '#333333',
     shadowOffset: {width: -1, height: -3},
     shadowRadius: 2,
     shadowOpacity: 0.4,
-    paddingTop: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
@@ -381,24 +390,25 @@ const styles = StyleSheet.create({
   panelTitle: {
     fontSize: 27,
     height: 35,
+    color: '#228257',
   },
   panelSubtitle: {
     fontSize: 14,
-    color: 'gray',
+    color: '#228257',
     height: 30,
     marginBottom: 10,
   },
   panelButton: {
     padding: 13,
     borderRadius: 10,
-    backgroundColor: '#2e64e5',
+    backgroundColor: '#83e6b9',
     alignItems: 'center',
     marginVertical: 7,
   },
   panelButtonTitle: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#228257',
   },
   action: {
     flexDirection: 'row',
@@ -407,6 +417,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#f2f2f2',
     paddingBottom: 5,
+    marginLeft: 28,
+    marginRight: 28,
   },
   actionError: {
     flexDirection: 'row',
@@ -420,5 +432,20 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
     color: '#333333',
+  },
+  buttonContainer: {
+    marginTop: 25,
+    width: '90%',
+    height: windowHeight / 15,
+    backgroundColor: '#83e6b9',
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 13,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#228257',
   },
 });

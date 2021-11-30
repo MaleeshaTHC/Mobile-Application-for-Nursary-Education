@@ -2,7 +2,6 @@ import React from 'react';
 import {View, StyleSheet, Text, TouchableHighlight} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-
 export default function Card({text, main, onPress, name}) {
   return (
     <TouchableHighlight onPress={onPress} underlayColor={'none'}>

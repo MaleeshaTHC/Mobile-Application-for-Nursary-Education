@@ -9,6 +9,7 @@ import 'react-native-gesture-handler';
 import React, {useContext} from 'react';
 import {View, TouchableOpacity, Image, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -76,6 +77,16 @@ const TabStack = () => {
           borderBottomWidth: 2,
         },
       }}>
+      <Tab.Screen
+        name="ProfileScreen"
+        component={ProfileScreenStack}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <FontAwesome name="user" color={color} size={size} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -156,7 +167,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#68f2b4',
           },
         })}
       />
@@ -169,7 +180,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#68f2b4',
           },
         })}
       />
@@ -325,7 +336,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#68f2b4',
           },
         })}
       />
@@ -338,7 +349,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#68f2b4',
           },
         })}
       />
@@ -614,12 +625,7 @@ const ProfileScreenStack = ({navigation}) => {
         component={ProfileScreen}
         options={() => ({
           headerTitle: '',
-          headerLeft: () => (
-            <NavigationDrawerStructure navigationProps={navigation} />
-          ),
-          headerStyle: {
-            backgroundColor: '#d0f7e6',
-          },
+          headerShown: false,
         })}
       />
       <Stack.Screen
@@ -627,12 +633,7 @@ const ProfileScreenStack = ({navigation}) => {
         component={EditProfileScreen}
         options={() => ({
           headerTitle: '',
-          headerLeft: () => (
-            <NavigationDrawerStructure navigationProps={navigation} />
-          ),
-          headerStyle: {
-            backgroundColor: '#d0f7e6',
-          },
+          headerShown: false,
         })}
       />
     </Stack.Navigator>
@@ -746,11 +747,6 @@ const App = () => {
         name="SchoolScreen"
         options={{drawerLabel: 'My School'}}
         component={SchoolScreenStack}
-      />
-      <Drawer.Screen
-        name="ProfileScreenStack"
-        options={{drawerLabel: 'Profile'}}
-        component={ProfileScreenStack}
       />
     </Drawer.Navigator>
   );

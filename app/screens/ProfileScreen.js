@@ -11,6 +11,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
+import {windowHeight, windowWidth} from '../constants/Dimensions';
 
 import firestore from '@react-native-firebase/firestore';
 import PostCard from '../components/PostCard';
@@ -43,7 +44,7 @@ const ProfileScreen = ({navigation, route}) => {
               userId,
               userName: 'Test Name',
               userImg:
-                'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
+                'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg',
               postTime: postTime,
               post,
               postImg,
@@ -88,7 +89,7 @@ const ProfileScreen = ({navigation, route}) => {
   const handleDelete = () => {};
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#d0f7e6'}}>
       <ScrollView
         style={styles.container}
         contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
@@ -98,8 +99,8 @@ const ProfileScreen = ({navigation, route}) => {
           source={{
             uri: userData
               ? userData.userImg ||
-                'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'
-              : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
+                'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg'
+              : 'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg',
           }}
         />
         <Text style={styles.userName}>
@@ -112,14 +113,14 @@ const ProfileScreen = ({navigation, route}) => {
         </Text>
         <View style={styles.userBtnWrapper}>
           <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => {
-              navigation.navigate('EditProfileScreen');
-            }}>
-            <Text style={styles.userBtnTxt}>Edit</Text>
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate('EditProfileScreen')}>
+            <Text style={styles.buttonText}>Edit Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.userBtn} onPress={() => logout()}>
-            <Text style={styles.userBtnTxt}>Logout</Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => logout()}>
+            <Text style={styles.buttonText}>Logout from Profile</Text>
           </TouchableOpacity>
         </View>
 
@@ -136,43 +137,35 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#d0f7e6',
     padding: 20,
   },
   userImg: {
     height: 150,
     width: 150,
     borderRadius: 75,
+    marginTop: 50,
   },
   userName: {
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 10,
   },
   aboutUser: {
-    fontSize: 12,
+    fontSize: 25,
     fontWeight: '600',
     color: '#666',
     textAlign: 'center',
     marginBottom: 10,
+    marginTop: 30,
   },
   userBtnWrapper: {
-    flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
     marginBottom: 10,
-  },
-  userBtn: {
-    borderColor: '#2e64e5',
-    borderWidth: 2,
-    borderRadius: 3,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    marginHorizontal: 5,
-  },
-  userBtnTxt: {
-    color: '#2e64e5',
+    marginTop: 50,
   },
   userInfoWrapper: {
     flexDirection: 'row',
@@ -193,5 +186,20 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#666',
     textAlign: 'center',
+  },
+  buttonContainer: {
+    marginTop: 25,
+    width: '90%',
+    height: windowHeight / 15,
+    backgroundColor: '#83e6b9',
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 13,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#228257',
   },
 });

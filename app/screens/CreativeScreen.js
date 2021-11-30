@@ -20,7 +20,7 @@ export default class CreativeScreen extends Component {
     return (
       <View style={styles.screen}>
         <View style={styles.header}>
-          <Text style={styles.heading}>Improve Your Creativity</Text>
+          <Text style={styles.heading}>Creative Kids</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>
