@@ -1,40 +1,63 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
-import FormButton from '../components/FormButton';
-
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  TouchableHighlight,
+  Text,
+  ScrollView,
+} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import ShapesCard from '../components/shapesCard';
 export default class ShapesScreen extends Component {
+  NavigateToMath = () => {
+    this.props.navigation.navigate('MathsScreen');
+  };
+  NavigateToHome = () => {
+    this.props.navigation.navigate('HomeScreen');
+  };
+  NavigateToShapesQuiz = () => {
+    this.props.navigation.navigate('ShapesQuiz');
+  };
   render() {
-    const goBackward = () => {
-      // eslint-disable-next-line no-undef
-      carouselRef.current.snapToPrev();
-    };
     return (
-      <View style={styles.screen}>
+      <ImageBackground
+        source={require('../assets/images/background2.jpg')}
+        style={styles.screen}>
         <Text style={styles.heading}>SHAPES</Text>
         <View style={styles.body}>
           <ScrollView>
             <View style={styles.card_container}>
               <Text style={styles.card_text}>Square</Text>
-              <View style={styles.card} />
+              <ShapesCard image={require('../assets/images/square.jpg')} />
               <Text style={styles.card_text}>Triangle</Text>
-              <View style={styles.card} />
+              <ShapesCard image={require('../assets/images/triangle.jpg')} />
               <Text style={styles.card_text}>Rectangle</Text>
-              <View style={styles.card} />
+              <ShapesCard image={require('../assets/images/rectangle.jpg')} />
               <Text style={styles.card_text}> Circle</Text>
-              <View style={styles.card} />
-              <Text style={styles.card_text}>   Line</Text>
-              <View style={styles.card} />
+              <ShapesCard image={require('../assets/images/circle.jpg')} />
             </View>
           </ScrollView>
         </View>
         <View style={styles.footer}>
-          <FormButton
-            buttonTitle={'Go to Activity'}
-            onPress={this.NavigateTo}
-          />
+          <TouchableHighlight
+            onPress={this.NavigateToMath}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="step-backward" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToHome}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="home" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToShapesQuiz}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="script-text" size={25} />
+          </TouchableHighlight>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -42,13 +65,12 @@ export default class ShapesScreen extends Component {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   body: {
-    flex: 2,
-    backgroundColor: '#d0f7e6',
+    flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 50,
   },
   card_container: {
     marginTop: 20,
@@ -63,33 +85,23 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 0.5,
-    backgroundColor: '#ffff',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'center',
-    borderTopLeftRadius: 100,
-    borderTopRightRadius: 100,
+    justifyContent: 'space-around',
+    marginTop: 40,
   },
   heading: {
     fontSize: 33,
     marginTop: 10,
-    color: '#228257',
-    fontWeight: 'bold',
     textAlign: 'center',
-    padding: 35,
+    marginBottom: 20,
   },
   card_text: {
     fontSize: 33,
     textAlign: 'center',
-    marginTop: 30,
-    color: '#228257',
-  },
-  card: {
-    backgroundColor: 'white',
-    width: 350,
-    height: 300,
-    borderRadius: 15,
-    marginTop: 35,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 40,
   },
 });

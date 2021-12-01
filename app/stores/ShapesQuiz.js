@@ -10,7 +10,7 @@ import {
   Animated,
 } from 'react-native';
 import {COLORS} from '../constants';
-import shapesData from './shapesData/shapesData';
+import shapesData from '../stores/shapesData/shapesData';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ShapesQuiz = ({navigation}) => {

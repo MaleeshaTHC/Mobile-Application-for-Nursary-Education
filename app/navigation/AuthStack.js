@@ -32,7 +32,7 @@ const AuthStack = () => {
 
   if (isFirstLaunch === null) {
     return null; // This is the 'tricky' part: The query to AsyncStorage is not finished, but we have to present something to the user. Null will just render nothing, so you can also put a placeholder of some sort, but effectively the interval between the first mount and AsyncStorage retrieving your data won't be noticeable to the user. But if you want to display anything then you can use a LOADER here
-  } else if (isFirstLaunch == true) {
+  } else if (isFirstLaunch === true) {
     routeName = 'Onboarding';
   } else {
     routeName = 'Login';
@@ -54,10 +54,10 @@ const AuthStack = () => {
         name="Signup"
         component={SignupScreen}
         options={({navigation}) => ({
-          title: 'Login',
+          title: 'Signup',
           headerStyle: {
-            backgroundColor: '#f9fafd',
-            shadowColor: '#f9fafd',
+            backgroundColor: '#f5dc88',
+            shadowColor: '#f5dc88',
             elevation: 0,
           },
           headerLeft: () => (
@@ -65,7 +65,7 @@ const AuthStack = () => {
               <FontAwesome.Button
                 name="chevron-left"
                 size={23}
-                backgroundColor="#f9fafd"
+                backgroundColor="#f5dc88"
                 color="#333"
                 marginLeft={5}
                 onPress={() => navigation.navigate('Login')}

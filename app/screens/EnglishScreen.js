@@ -1,6 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  ScrollView,
+} from 'react-native';
 import Card from '../components/Card';
 
 export default class MathsScreen extends Component {
@@ -21,8 +27,10 @@ export default class MathsScreen extends Component {
   };
   render() {
     return (
-      <View style={styles.screen}>
-        <View style={styles.header}>
+      <ImageBackground
+        source={require('../assets/images/background2.jpg')}
+        style={styles.screen}>
+        <View>
           <Text style={styles.heading}>Happy English</Text>
         </View>
         <View style={styles.body}>
@@ -31,13 +39,13 @@ export default class MathsScreen extends Component {
               text={'Do you want to know Alphabet? Come try it !'}
               main={'ALPHABET'}
               onPress={this.NavigateToAlphabet}
-              name={'tags'}
+              name={'book'}
             />
             <Card
               text={'Do you want to know Phrases? Come try it !'}
               main={'PHRASES'}
               onPress={this.NavigateToPhrases}
-              name={'tags'}
+              name={'book'}
             />
             <Card
               main={'Quiz of Alphabet'}
@@ -51,7 +59,7 @@ export default class MathsScreen extends Component {
             />
           </View>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -59,27 +67,15 @@ export default class MathsScreen extends Component {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
-  },
-  header: {
-    flex: 0.5,
-    backgroundColor: '#68f2b4',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
   },
   body: {
     flex: 2,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 10,
-    backgroundColor: '#d0f7e6',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
   card_container: {
-    marginTop: 20,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -101,12 +97,12 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   heading: {
-    color: 'black',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     textAlignVertical: 'center',
     padding: 10,
+    marginBottom: 40,
   },
   card_text: {
     fontSize: 25,

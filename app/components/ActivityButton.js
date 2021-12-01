@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     width: '65%',
     height: windowHeight / 11,
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 23,
     fontWeight: 'bold',
-    color: '#228257',
     alignItems: 'center',
     justifyContent: 'center',
   },

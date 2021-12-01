@@ -65,7 +65,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#4867aa"
-            backgroundColor="#83e6b9"
+            backgroundColor="#88b0d3"
             onPress={() => fbLogin()}
           />
 
@@ -73,7 +73,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Google"
             btnType="google"
             color="#de4d41"
-            backgroundColor="#83e6b9"
+            backgroundColor="#88b0d3"
             onPress={() => googleLogin()}
           />
         </View>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     padding: 25,
     paddingTop: 60,
     paddingBottom: 100,
-    backgroundColor: '#d0f7e6',
+    backgroundColor: '#f5dc88',
   },
   logo: {
     height: 100,
@@ -110,7 +110,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 28,
     marginTop: 10,
-    color: '#228257',
   },
   navButton: {
     marginTop: 15,
@@ -122,6 +121,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     marginBottom: 15,
-    color: '#228257',
   },
 });

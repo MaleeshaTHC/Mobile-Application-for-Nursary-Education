@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, {useContext, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableHighlight,
+  ImageBackground,
+} from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import FormButton from '../components/FormButton';
 import Slider_Alp from '../stores/Slider_Alp';
@@ -10,7 +17,9 @@ const AlphabetScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
-    <View style={styles.main}>
+    <ImageBackground
+      source={require('../assets/images/background2.jpg')}
+      style={styles.main}>
       <View style={styles.header}>
         <Text style={styles.text}>Let's Learn Alphabet</Text>
       </View>
@@ -18,12 +27,23 @@ const AlphabetScreen = ({navigation}) => {
         <Slider_Alp />
       </View>
       <View style={styles.bottom}>
-        <FormButton
-          buttonTitle={'Go to Activity'}
+        <TouchableHighlight
+          onPress={() => navigation.navigate('EnglishScreen')}
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="step-backward" size={25} />
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate('HomeScreen')}
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="home" size={25} />
+        </TouchableHighlight>
+        <TouchableHighlight
           onPress={() => navigation.navigate('AlphabetQuiz')}
-        />
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="script-text" size={25} />
+        </TouchableHighlight>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -32,31 +52,32 @@ export default AlphabetScreen;
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#ffff',
   },
   body: {
-    flex: 8.5,
+    flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20,
   },
   header: {
-    flex: 2,
-    backgroundColor: '#d0f7e6',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
   bottom: {
-    flex: 0.9,
-    backgroundColor: '#ffff',
+    flex: 0.5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 30,
+    justifyContent: 'space-around',
+    marginTop: 40,
   },
   text: {
     fontSize: 33,
     marginTop: 10,
-    color: '#228257',
+    textAlign: 'center',
+    marginBottom: 20,
   },
 });

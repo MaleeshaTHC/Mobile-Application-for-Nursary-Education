@@ -1,19 +1,34 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
-import FormButton from '../components/FormButton';
-
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  ScrollView,
+  TouchableHighlight,
+} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export default class ColorsScreen extends Component {
   constructor() {
     super();
   }
 
-  NavigateTo = () => {
+  NavigateToCreative = () => {
+    this.props.navigation.navigate('CreativeScreen');
+  };
+  NavigateToHome = () => {
+    this.props.navigation.navigate('HomeScreen');
+  };
+  NavigateToQuiz = () => {
     this.props.navigation.navigate('ColorsQuiz');
   };
+
   render() {
     return (
-      <View style={styles.screen}>
+      <ImageBackground
+        source={require('../assets/images/background2.jpg')}
+        style={styles.screen}>
         <View style={styles.header}>
           <Text style={styles.heading}>Let's Learn Colors</Text>
         </View>
@@ -146,12 +161,23 @@ export default class ColorsScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.footer}>
-          <FormButton
-            buttonTitle={'Go to Activity'}
-            onPress={this.NavigateTo}
-          />
+          <TouchableHighlight
+            onPress={this.NavigateToCreative}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="step-backward" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToHome}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="home" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToQuiz}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="script-text" size={25} />
+          </TouchableHighlight>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -159,24 +185,19 @@ export default class ColorsScreen extends Component {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   header: {
-    flex: 0.5,
-    backgroundColor: '#68f2b4',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
   body: {
-    flex: 2,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    backgroundColor: '#d0f7e6',
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
+    flex: 7.2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
   },
   card_container: {
     marginTop: 20,
@@ -190,9 +211,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.4,
+    flex: 0.5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    backgroundColor: '#d0f7e6',
+    justifyContent: 'space-around',
+    marginTop: 40,
   },
   images: {
     width: 60,
@@ -201,12 +225,10 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   heading: {
-    color: 'black',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 33,
+    marginTop: 10,
     textAlign: 'center',
-    textAlignVertical: 'center',
-    padding: 10,
+    marginBottom: 20,
   },
   card_text: {
     fontSize: 25,

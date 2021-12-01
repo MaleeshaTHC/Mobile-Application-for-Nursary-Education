@@ -27,7 +27,7 @@ import ActivityScreen from '../screens/ActivityScreen';
 import AlphabetQuiz from '../stores/AlphabetQuiz';
 import PhrasesQuiz from '../stores/PhrasesQuiz';
 import NumbersQuiz from '../stores/NumbersQuiz';
-import ShapesQuiz from '../stores/NumbersQuiz';
+import ShapesQuiz from '../stores/ShapesQuiz';
 import ColorsQuiz from '../stores/ColorsQuiz';
 import MathsScreen from '../screens/MathsScreen';
 import CreativeScreen from '../screens/CreativeScreen';
@@ -53,7 +53,6 @@ const NavigationDrawerStructure = props => {
       <TouchableOpacity onPress={() => toggleDrawer()}>
         <MaterialCommunityIcons
           name="reorder-horizontal"
-          color={'#228257'}
           size={25}
           style={{marginLeft: 10}}
         />
@@ -67,14 +66,10 @@ const TabStack = () => {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        activeTintColor: '#228257',
-        inactiveTintColor: '#228125',
+        activeTintColor: 'gray',
+        inactiveTintColor: '#f5dc88',
         style: {
-          backgroundColor: '#d0f7e6',
-        },
-        indicatorStyle: {
-          borderBottomColor: '#d0f7e6',
-          borderBottomWidth: 2,
+          backgroundColor: '#88b0d3',
         },
       }}>
       <Tab.Screen
@@ -128,7 +123,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -154,7 +149,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -167,7 +162,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -180,7 +175,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -193,7 +188,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -206,7 +201,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -219,7 +214,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -232,7 +227,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -245,7 +240,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -258,7 +253,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -271,7 +266,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -284,7 +279,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -297,7 +292,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -310,7 +305,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -323,7 +318,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -336,7 +331,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -349,7 +344,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#68f2b4',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -362,7 +357,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -374,9 +369,16 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
-          headerStyle: {
-            backgroundColor: '#d0f7e6',
-          },
+        })}
+      />
+      <Stack.Screen
+        name="ActivityScreenStack"
+        component={ActivityStack}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
         })}
       />
     </Stack.Navigator>
@@ -396,7 +398,7 @@ const AlphabetScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />

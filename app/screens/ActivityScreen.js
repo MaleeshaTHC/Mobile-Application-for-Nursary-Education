@@ -3,12 +3,18 @@
 // https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
 
 import * as React from 'react';
-import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  ImageBackground,
+} from 'react-native';
 import ActivityButton from '../components/ActivityButton';
 
 const ActivityScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#d0f7e6'}}>
+    <View style={{flex: 1, backgroundColor: '#f5dc88'}}>
       <Text style={styles.heading}>Fun Activities</Text>
       <View style={styles.button_container}>
         <ActivityButton
@@ -32,7 +38,7 @@ const ActivityScreen = ({navigation}) => {
           onPress={() => navigation.navigate('ColorsQuiz')}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -41,17 +47,17 @@ export default ActivityScreen;
 const styles = StyleSheet.create({
   heading: {
     fontSize: 40,
-    marginTop: 40,
-    color: '#228257',
+    marginTop: 25,
+    marginBottom: 20,
     textAlign: 'center',
   },
   button_container: {
     flex: 3,
-    marginTop: 40,
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
+    backgroundColor: '#88b0d3',
   },
 });

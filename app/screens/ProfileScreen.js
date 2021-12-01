@@ -9,6 +9,7 @@ import {
   StyleSheet,
   ScrollView,
   SafeAreaView,
+  ImageBackground,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
@@ -89,7 +90,9 @@ const ProfileScreen = ({navigation, route}) => {
   const handleDelete = () => {};
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#d0f7e6'}}>
+    <ImageBackground
+      source={require('../assets/images/background2.jpg')}
+      style={{flex: 1}}>
       <ScrollView
         style={styles.container}
         contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
@@ -128,7 +131,7 @@ const ProfileScreen = ({navigation, route}) => {
           <PostCard key={item.id} item={item} onDelete={handleDelete} />
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </ImageBackground>
   );
 };
 
@@ -137,7 +140,6 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
     padding: 20,
   },
   userImg: {
@@ -155,7 +157,6 @@ const styles = StyleSheet.create({
   aboutUser: {
     fontSize: 25,
     fontWeight: '600',
-    color: '#666',
     textAlign: 'center',
     marginBottom: 10,
     marginTop: 30,
@@ -164,8 +165,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    marginBottom: 10,
-    marginTop: 50,
+    marginTop: 130,
   },
   userInfoWrapper: {
     flexDirection: 'row',
@@ -184,14 +184,13 @@ const styles = StyleSheet.create({
   },
   userInfoSubTitle: {
     fontSize: 12,
-    color: '#666',
     textAlign: 'center',
   },
   buttonContainer: {
     marginTop: 25,
-    width: '90%',
+    width: '80%',
     height: windowHeight / 15,
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -200,6 +199,5 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#228257',
   },
 });

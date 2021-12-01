@@ -18,7 +18,10 @@ export default function NavigationCard({text, image, onPress}) {
         marginLeft: 25,
         marginTop: 40,
       }}>
-      <TouchableHighlight style={styles.button} onPress={onPress}>
+      <TouchableHighlight
+        underlayColor={'white'}
+        style={styles.button}
+        onPress={onPress}>
         <Text style={styles.textArea_text}>{text}</Text>
       </TouchableHighlight>
     </ImageBackground>
@@ -27,7 +30,6 @@ export default function NavigationCard({text, image, onPress}) {
 
 const styles = StyleSheet.create({
   textArea_text: {
-    color: '#228257',
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
   button: {
     width: 250,
     height: 65,
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#e6f1f2',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',

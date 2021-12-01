@@ -7,13 +7,8 @@ export default function Card({text, main, onPress, name}) {
     <TouchableHighlight onPress={onPress} underlayColor={'none'}>
       <View style={styles.card}>
         <View style={styles.vector}>
-          <AntDesign name={name} size={35} />
-          <AntDesign name={name} size={35} />
-          <AntDesign name={name} size={35} />
+          <AntDesign name={name} size={45} />
         </View>
-        <Text />
-        <Text style={styles.textArea_text}>{text}</Text>
-        <Text />
         <Text style={styles.text}>{main}</Text>
       </View>
     </TouchableHighlight>
@@ -21,30 +16,25 @@ export default function Card({text, main, onPress, name}) {
 }
 
 const styles = StyleSheet.create({
-  textArea_text: {
-    color: '#228257',
-    fontSize: 25,
-    textAlign: 'center',
-    padding: 6,
-  },
-  vector:{
+  vector: {
     flexDirection: 'row',
+    padding: 20,
+    marginBottom: 5,
   },
   text: {
-    color: '#228257',
-    fontSize: 33,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 6,
   },
   card: {
     width: 180,
-    height: 250,
+    height: 200,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    margin: 10,
-    backgroundColor: '#68f2b4',
+    margin: 8,
+    backgroundColor: '#e6f1f2',
     borderRadius: 15,
   },
 });

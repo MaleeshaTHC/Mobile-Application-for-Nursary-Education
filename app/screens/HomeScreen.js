@@ -16,7 +16,9 @@ import NavigationCard from '../components/NavigationCard';
 const HomeScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
   return (
-    <SafeAreaView style={styles.safearea}>
+    <ImageBackground
+      source={require('../assets/images/background2.jpg')}
+      style={styles.safearea}>
       <Image
         style={styles.logo}
         source={require('../assets/images/logo.png')}
@@ -26,7 +28,7 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.heading}>Let's Start Your</Text>
       <Text style={styles.heading}>Learning Journey !</Text>
       <Text />
-      <ScrollView style={{backgroundColor: '#d0f7e6'}}>
+      <ScrollView>
         <NavigationCard
           text={"Let's Go !"}
           image={require('../assets/images/english.jpg')}
@@ -48,7 +50,7 @@ const HomeScreen = ({navigation}) => {
           onPress={() => navigation.navigate('CommunityScreen')}
         />
       </ScrollView>
-    </SafeAreaView>
+    </ImageBackground>
   );
 };
 
@@ -57,7 +59,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   safearea: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   scrollview: {
     flex: 3.5,

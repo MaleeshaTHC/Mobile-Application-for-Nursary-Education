@@ -132,55 +132,48 @@ export default Slider_Num;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   slider: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   navigator: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d0f7e6',
     marginBottom: 15,
   },
   item: {
     width: screenWidth - 55,
-    height: screenWidth + 15,
+    height: screenWidth + 45,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d0f7e6',
   },
   imageContainer: {
     flex: 1,
-    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
-    backgroundColor: 'white',
+    marginBottom: Platform.select({ios: 0, android: 1}),
     borderRadius: 20,
     width: 370,
   },
   image: {
     width: 80,
-    height: 100,
+    height: 120,
   },
   slider_text1: {
-    color: '#228257',
     fontSize: 15,
     fontWeight: 'bold',
     margin: 15,
   },
   subtitle: {
-    color: '#228257',
     fontSize: 25,
-    fontWeight: 'bold',
     textAlign: 'center',
     textAlignVertical: 'auto',
+    marginTop: 30,
   },
   card1: {
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     borderRadius: 15,
     marginRight: 50,
   },
@@ -188,7 +181,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     borderRadius: 15,
   },
 });

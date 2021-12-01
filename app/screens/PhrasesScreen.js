@@ -1,18 +1,134 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext, useState} from 'react';
-import {View, Text} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableHighlight,
+  ImageBackground,
+  ScrollView,
+} from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Card2 from '../components/card2';
 
 import FormButton from '../components/FormButton';
+import Slider_Alp from '../stores/Slider_Alp';
 
-const PhrasesScreen = ({navigation}) => {
+const AlphabetScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
-    <View>
-      <Text>Phrases {user.email}</Text>
-      <FormButton buttonTitle="Logout" onPress={() => logout()} />
-    </View>
+    <ImageBackground
+      source={require('../assets/images/background2.jpg')}
+      style={styles.main}>
+      <View style={styles.header}>
+        <Text style={styles.text}>Essential Phrases</Text>
+      </View>
+      <View style={styles.body}>
+        <ScrollView>
+          <Card2
+            name={'message1'}
+            text1={'Good Morning !            '}
+            text2={'Good Morning !'}
+            text3={'Have a Good Day !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Good Afternoon !          '}
+            text2={'  Good Afternoon !'}
+            text3={'It is a Great Day !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Good Evening !           '}
+            text2={'Good Evening !'}
+            text3={'How is the Day !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Good Night !               '}
+            text2={'Good Night !'}
+            text3={'  Sweet Dreams !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Thank You !                  '}
+            text2={'          It is my Pleasure !'}
+            text3={'Welcome !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Get Well Soon !             '}
+            text2={'    Thank you for '}
+            text3={'your wish !'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'Hello, Nice to meet you !'}
+            text2={'Nice to meet you too !'}
+            text3={'How are you ?'}
+          />
+          <Card2
+            name={'message1'}
+            text1={'I am Sorry !                '}
+            text2={'            It is Ok !'}
+            text3={'         No Harm.'}
+          />
+        </ScrollView>
+      </View>
+      <View style={styles.bottom}>
+        <TouchableHighlight
+          onPress={() => navigation.navigate('EnglishScreen')}
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="step-backward" size={25} />
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate('HomeScreen')}
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="home" size={25} />
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate('PhrasesQuiz')}
+          underlayColor={'none'}>
+          <MaterialCommunityIcons name="script-text" size={25} />
+        </TouchableHighlight>
+      </View>
+    </ImageBackground>
   );
 };
 
-export default PhrasesScreen;
+export default AlphabetScreen;
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+  body: {
+    flex: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  header: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+  },
+  bottom: {
+    flex: 0.5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginTop: 40,
+  },
+  text: {
+    fontSize: 33,
+    marginTop: 10,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+});

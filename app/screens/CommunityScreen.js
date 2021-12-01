@@ -1,6 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  ScrollView,
+} from 'react-native';
 import Card from '../components/Card';
 
 export default class CommunityScreen extends Component {
@@ -16,27 +22,29 @@ export default class CommunityScreen extends Component {
 
   render() {
     return (
-      <View style={styles.screen}>
-        <View style={styles.header}>
+      <ImageBackground
+        source={require('../assets/images/background2.jpg')}
+        style={styles.screen}>
+        <View>
           <Text style={styles.heading}>Community</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.card_container}>
             <Card
-              text={'Know your family members'}
+              text={'Do you want to know Alphabet? Come try it !'}
               main={'FAMILY'}
               onPress={this.NavigateToMyFam}
-              name={'tags'}
+              name={'book'}
             />
             <Card
-              text={'Know your school members'}
+              text={'Do you want to know Phrases? Come try it !'}
               main={'SCHOOL'}
               onPress={this.NavigateToSchool}
-              name={'tags'}
+              name={'book'}
             />
           </View>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -46,20 +54,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#d0f7e6',
   },
-  header: {
-    flex: 0.5,
-    backgroundColor: '#68f2b4',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
-  },
   body: {
     flex: 2,
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-    backgroundColor: '#d0f7e6',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
@@ -86,12 +85,13 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   heading: {
-    color: 'black',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     textAlignVertical: 'center',
     padding: 10,
+    marginTop: 55,
+    marginBottom: 20,
   },
   card_text: {
     fontSize: 25,

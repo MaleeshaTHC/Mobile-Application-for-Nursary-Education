@@ -184,18 +184,15 @@ export default Slider_Alp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   slider: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
     marginTop: 15,
   },
   navigator: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d0f7e6',
     marginBottom: 25,
   },
   item: {
@@ -203,7 +200,6 @@ const styles = StyleSheet.create({
     height: screenWidth + 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d0f7e6',
   },
   imageContainer: {
     flex: 1,
@@ -217,13 +213,11 @@ const styles = StyleSheet.create({
     height: 200,
   },
   slider_text1: {
-    color: '#228257',
     fontSize: 15,
     fontWeight: 'bold',
     margin: 15,
   },
   subtitle: {
-    color: 'black',
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -233,7 +227,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     borderRadius: 15,
     marginRight: 50,
   },
@@ -241,7 +235,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#83e6b9',
+    backgroundColor: '#f5dc88',
     borderRadius: 15,
   },
 });
