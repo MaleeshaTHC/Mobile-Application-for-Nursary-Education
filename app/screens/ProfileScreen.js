@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect, useContext} from 'react';
@@ -8,11 +9,11 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   ImageBackground,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import firestore from '@react-native-firebase/firestore';
 import PostCard from '../components/PostCard';
@@ -90,10 +91,7 @@ const ProfileScreen = ({navigation, route}) => {
     <ImageBackground
       source={require('../assets/images/background2.jpg')}
       style={{flex: 1}}>
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
-        showsVerticalScrollIndicator={false}>
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <Image
           style={styles.userImg}
           source={{
@@ -103,6 +101,18 @@ const ProfileScreen = ({navigation, route}) => {
               : 'https://cdn2.vectorstock.com/i/thumb-large/04/71/person-icon-vector-2110471.jpg',
           }}
         />
+        <TouchableOpacity
+          onPress={() => logout()}
+          style={{
+            alignItems: 'center',
+          }}>
+          <MaterialCommunityIcons
+            name="logout-variant"
+            size={30}
+            style={{margin: 5}}
+          />
+          <Text>Logout</Text>
+        </TouchableOpacity>
         <Text style={styles.userName}>
           {userData ? userData.fname || 'Test' : 'Test'}{' '}
           {userData ? userData.lname || 'User' : 'User'}
@@ -111,6 +121,16 @@ const ProfileScreen = ({navigation, route}) => {
         <Text style={styles.aboutUser}>
           {userData ? userData.about || 'No details added.' : ''}
         </Text>
+      </View>
+      <Text style={styles.aboutUser}>Dashboard</Text>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
+        showsVerticalScrollIndicator={false}>
+        <Text />
+        {posts.map(item => (
+          <PostCard key={item.id} item={item} onDelete={handleDelete} />
+        ))}
         <View style={styles.userBtnWrapper}>
           <TouchableOpacity
             style={styles.buttonContainer}
@@ -123,13 +143,6 @@ const ProfileScreen = ({navigation, route}) => {
             <Text style={styles.buttonText}>Feed</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.aboutUser}>Dashboard</Text>
-        <Text />
-        <Text />
-        <Text />
-        {posts.map(item => (
-          <PostCard key={item.id} item={item} onDelete={handleDelete} />
-        ))}
       </ScrollView>
     </ImageBackground>
   );
@@ -143,10 +156,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   userImg: {
-    height: 150,
-    width: 150,
-    borderRadius: 75,
-    marginTop: 50,
+    height: 120,
+    width: 120,
+    borderRadius: 120,
+    marginBottom: 20,
   },
   userName: {
     fontSize: 30,
@@ -158,8 +171,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 10,
-    marginTop: 30,
   },
   userBtnWrapper: {
     alignItems: 'center',
