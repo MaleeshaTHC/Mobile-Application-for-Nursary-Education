@@ -24,9 +24,9 @@ const HomeScreen = ({navigation}) => {
         source={require('../assets/images/logo.png')}
       />
       <Text style={styles.text}>Welcome</Text>
-      <Text />
       <Text style={styles.heading}>Let's Start Your</Text>
       <Text style={styles.heading}>Learning Journey !</Text>
+      <Text />
       <Text />
       <ScrollView>
         <NavigationCard
@@ -79,13 +79,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'right',
     marginRight: 20,
-    marginBottom: 55,
+    marginBottom: 50,
     fontWeight: '100',
-    color: '#228257',
   },
   heading: {
     fontSize: 36,
-    color: '#228257',
     textAlign: 'center',
     fontWeight: '100',
   },

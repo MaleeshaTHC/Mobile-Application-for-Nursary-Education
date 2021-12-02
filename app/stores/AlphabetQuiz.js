@@ -136,7 +136,7 @@ const AlphabetQuiz = ({navigation}) => {
               paddingHorizontal: 20,
               marginVertical: 10,
             }}>
-            <Text style={{fontSize: 20}}>{option}</Text>
+            <Text style={{fontSize: 25}}>{option}</Text>
 
             {/* Show Check Or Cross Icon based on correct answer*/}
             {option === correctOption ? (
@@ -189,7 +189,7 @@ const AlphabetQuiz = ({navigation}) => {
           style={{
             marginTop: 20,
             width: '80%',
-            backgroundColor: '#88b0d3',
+            backgroundColor: '#f5dc88',
             padding: 20,
             borderRadius: 15,
             marginLeft: 42,
@@ -215,13 +215,14 @@ const AlphabetQuiz = ({navigation}) => {
           height: 20,
           borderRadius: 20,
           borderWidth: 0.1,
+          backgroundColor: '#f5dc88',
         }}>
         <Animated.View
           style={[
             {
               height: 20,
               borderRadius: 20,
-              backgroundColor: '#f5dc88',
+              backgroundColor: '#88b0d3',
             },
             {
               width: progressAnim,
@@ -233,7 +234,8 @@ const AlphabetQuiz = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView
+    <ImageBackground
+      source={require('../assets/images/background2.jpg')}
       style={{
         flex: 1,
       }}>
@@ -364,7 +366,7 @@ const AlphabetQuiz = ({navigation}) => {
                 Add to Your Profile and Grow up Profile
               </Text>
               <TouchableOpacity
-                onPress={() => navigation.navigate('AddMarksScreen')}
+                onPress={() => navigation.navigate('ProfileScreen')}
                 style={{
                   backgroundColor: '#88b0d3',
                   padding: 20,
@@ -384,7 +386,7 @@ const AlphabetQuiz = ({navigation}) => {
           </ImageBackground>
         </Modal>
       </View>
-    </SafeAreaView>
+    </ImageBackground>
   );
 };
 
