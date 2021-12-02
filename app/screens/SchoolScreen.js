@@ -1,30 +1,68 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
-import Card from '../components/Card';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  ScrollView,
+  ImageBackground,
+  TouchableHighlight,
+} from 'react-native';
+import SchoolCard from '../components/School';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default class SchoolScreen extends Component {
+  constructor() {
+    super();
+  }
+
+  NavigateToCreative = () => {
+    this.props.navigation.navigate('CommunityScreen');
+  };
+  NavigateToHome = () => {
+    this.props.navigation.navigate('HomeScreen');
+  };
+
   render() {
     return (
-      <View style={styles.screen}>
+      <ImageBackground
+        source={require('../assets/images/background2.jpg')}
+        style={styles.screen}>
         <View style={styles.header}>
           <Text style={styles.heading}>School Members</Text>
         </View>
         <View style={styles.body}>
-          <View style={styles.card_container}>
-            <Card
-              text={'Know your family members'}
-              main={'FAMILY'}
-              name={'tags'}
-            />
-            <Card
-              text={'Know your school members'}
-              main={'SCHOOL'}
-              name={'tags'}
-            />
-          </View>
+          <ScrollView>
+            <View style={styles.card_container}>
+              <SchoolCard
+                image={require('../assets/images/principal.jpg')}
+                text1={'Principal Sir'}
+              />
+              <SchoolCard
+                image={require('../assets/images/madam.jpg')}
+                text1={'Madam / Teacher'}
+              />
+              <SchoolCard
+                image={require('../assets/images/sir.jpg')}
+                text1={'Sir / Teacher'}
+              />
+            </View>
+          </ScrollView>
         </View>
-      </View>
+        <View style={styles.footer}>
+          <TouchableHighlight
+            onPress={this.NavigateToCreative}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="step-backward" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToHome}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="home" size={25} />
+          </TouchableHighlight>
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -32,24 +70,19 @@ export default class SchoolScreen extends Component {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   header: {
-    flex: 0.5,
-    backgroundColor: '#68f2b4',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
   body: {
-    flex: 2,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    backgroundColor: '#d0f7e6',
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
+    flex: 7.2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
   },
   card_container: {
     marginTop: 20,
@@ -63,9 +96,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.4,
+    flex: 0.5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    backgroundColor: '#d0f7e6',
+    justifyContent: 'space-around',
+    marginTop: 40,
   },
   images: {
     width: 60,
@@ -74,12 +110,10 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   heading: {
-    color: 'black',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 33,
+    marginTop: 10,
     textAlign: 'center',
-    textAlignVertical: 'center',
-    padding: 10,
+    marginBottom: 20,
   },
   card_text: {
     fontSize: 25,

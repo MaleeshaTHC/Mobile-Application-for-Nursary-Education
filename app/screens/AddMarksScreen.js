@@ -1,15 +1,17 @@
 import React, {useState, useContext} from 'react';
 import {
-  View,
+  TouchableOpacity,
   Text,
   Platform,
   StyleSheet,
   Alert,
   ActivityIndicator,
+  ImageBackground,
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ImagePicker from 'react-native-image-crop-picker';
+import {windowHeight, windowWidth} from '../constants/Dimensions';
 
 import storage from '@react-native-firebase/storage';
 import firestore from '@react-native-firebase/firestore';
@@ -24,8 +26,9 @@ import {
 } from '../styles/Addpost';
 
 import {AuthContext} from '../navigation/AuthProvider';
+import NavigationCard from '../components/NavigationCard';
 
-const AddMarksScreen = () => {
+const AddPostScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   const [image, setImage] = useState(null);
@@ -138,51 +141,52 @@ const AddMarksScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require('../assets/images/background.jpg')}
+      style={styles.container}>
       <InputWrapper>
         {image != null ? <AddImage source={{uri: image}} /> : null}
 
         <InputField
-          placeholder="What's on your mind?"
+          placeholder="Feed Your Profile with Marks                   Add something. ..."
           multiline
-          numberOfLines={4}
+          numberOfLines={10}
           value={post}
           onChangeText={content => setPost(content)}
         />
         {uploading ? (
           <StatusWrapper>
             <Text>{transferred} % Completed!</Text>
-            <ActivityIndicator size="large" color="#0000ff" />
+            <ActivityIndicator size="large" color="#88b0d3" />
           </StatusWrapper>
         ) : (
-          <SubmitBtn onPress={submitPost}>
-            <SubmitBtnText>Post</SubmitBtnText>
-          </SubmitBtn>
+          <TouchableOpacity style={styles.buttonContainer} onPress={submitPost}>
+            <Text style={styles.buttonText}>Feed</Text>
+          </TouchableOpacity>
         )}
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate('ProfileScreen')}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
       </InputWrapper>
-      <ActionButton buttonColor="#2e64e5">
+      <ActionButton buttonColor="#88b0d3">
         <ActionButton.Item
-          buttonColor="#9b59b6"
-          title="Take Photo"
-          onPress={takePhotoFromCamera}>
-          <Icon name="camera-outline" style={styles.actionButtonIcon} />
-        </ActionButton.Item>
-        <ActionButton.Item
-          buttonColor="#3498db"
+          buttonColor="#88b0d3"
           title="Choose Photo"
           onPress={choosePhotoFromLibrary}>
           <Icon name="md-images-outline" style={styles.actionButtonIcon} />
         </ActionButton.Item>
       </ActionButton>
-    </View>
+    </ImageBackground>
   );
 };
 
-export default AddMarksScreen;
+export default AddPostScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -190,5 +194,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 22,
     color: 'white',
+  },
+  buttonContainer: {
+    width: '50%',
+    height: windowHeight / 15,
+    backgroundColor: '#88b0d3',
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 13,
+    marginTop: 20,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });

@@ -136,7 +136,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -188,7 +188,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#88b0d3',
           },
         })}
       />
@@ -369,6 +369,9 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
+          headerStyle: {
+            backgroundColor: '#88b0d3',
+          },
         })}
       />
       <Stack.Screen
@@ -379,6 +382,9 @@ const HomeScreenStack = ({navigation}) => {
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
+          headerStyle: {
+            backgroundColor: '#f5dc88',
+          },
         })}
       />
     </Stack.Navigator>
@@ -411,7 +417,7 @@ const AlphabetScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#88b0d3',
           },
         })}
       />
@@ -432,7 +438,7 @@ const PhrasesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -445,7 +451,7 @@ const PhrasesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#88b0d3',
           },
         })}
       />
@@ -466,7 +472,7 @@ const NumbersScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -500,7 +506,7 @@ const ShapesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -534,7 +540,7 @@ const ColorsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -568,7 +574,7 @@ const PoemsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -589,7 +595,7 @@ const MyFamScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -610,7 +616,7 @@ const SchoolScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#d0f7e6',
+            backgroundColor: '#f5dc88',
           },
         })}
       />
@@ -702,7 +708,7 @@ const App = () => {
   return (
     <Drawer.Navigator
       drawerContentOptions={{
-        activeTintColor: '#d0f7e6',
+        activeTintColor: '#88b0d3',
         itemStyle: {marginVertical: 8},
       }}>
       <Drawer.Screen

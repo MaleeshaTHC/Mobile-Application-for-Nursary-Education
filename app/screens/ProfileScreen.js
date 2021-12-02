@@ -38,8 +38,7 @@ const ProfileScreen = ({navigation, route}) => {
           // console.log('Total Posts: ', querySnapshot.size);
 
           querySnapshot.forEach(doc => {
-            const {userId, post, postImg, postTime, likes, comments} =
-              doc.data();
+            const {userId, post, postImg, postTime} = doc.data();
             list.push({
               id: doc.id,
               userId,
@@ -50,8 +49,6 @@ const ProfileScreen = ({navigation, route}) => {
               post,
               postImg,
               liked: false,
-              likes,
-              comments,
             });
           });
         });
@@ -118,15 +115,18 @@ const ProfileScreen = ({navigation, route}) => {
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => navigation.navigate('EditProfileScreen')}>
-            <Text style={styles.buttonText}>Edit Profile</Text>
+            <Text style={styles.buttonText}>Edit</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => logout()}>
-            <Text style={styles.buttonText}>Logout from Profile</Text>
+            onPress={() => navigation.navigate('AddMarksScreen')}>
+            <Text style={styles.buttonText}>Feed</Text>
           </TouchableOpacity>
         </View>
-
+        <Text style={styles.aboutUser}>Dashboard</Text>
+        <Text />
+        <Text />
+        <Text />
         {posts.map(item => (
           <PostCard key={item.id} item={item} onDelete={handleDelete} />
         ))}
@@ -162,10 +162,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   userBtnWrapper: {
-    justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
     marginTop: 130,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 50,
   },
   userInfoWrapper: {
     flexDirection: 'row',
@@ -188,7 +190,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 25,
-    width: '80%',
+    width: '40%',
     height: windowHeight / 15,
     backgroundColor: '#f5dc88',
     padding: 10,

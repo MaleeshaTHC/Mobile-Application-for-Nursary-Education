@@ -5,10 +5,10 @@ import {
   StyleSheet,
   ImageBackground,
   Text,
-  ScrollView,
+  TouchableHighlight,
 } from 'react-native';
 import Card from '../components/Card';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export default class CommunityScreen extends Component {
   constructor() {
     super();
@@ -18,6 +18,15 @@ export default class CommunityScreen extends Component {
   };
   NavigateToSchool = () => {
     this.props.navigation.navigate('SchoolScreen');
+  };
+  NavigateToBack = () => {
+    this.props.navigation.navigate('CreativeScreen');
+  };
+  NavigateToHome = () => {
+    this.props.navigation.navigate('HomeScreen');
+  };
+  NavigateToNext = () => {
+    this.props.navigation.navigate('HomeScreen');
   };
 
   render() {
@@ -43,6 +52,23 @@ export default class CommunityScreen extends Component {
               name={'book'}
             />
           </View>
+        </View>
+        <View style={styles.footer}>
+          <TouchableHighlight
+            onPress={this.NavigateToBack}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="step-backward" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToHome}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="home" size={25} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={this.NavigateToNext}
+            underlayColor={'none'}>
+            <MaterialCommunityIcons name="step-forward" size={25} />
+          </TouchableHighlight>
         </View>
       </ImageBackground>
     );
@@ -74,9 +100,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.4,
+    flex: 0.5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    backgroundColor: '#d0f7e6',
+    justifyContent: 'space-around',
+    marginTop: 400,
   },
   images: {
     width: 60,
