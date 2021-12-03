@@ -15,7 +15,7 @@ export default function FamilyCard({text1, text2, image}) {
         }}
       />
       <View style={styles.card2}>
-        <Text style={styles.text2}>{text1}</Text>
+        <Text style={styles.text}>{text1}</Text>
         <Text style={styles.text2}>{text2}</Text>
       </View>
     </View>
@@ -24,8 +24,11 @@ export default function FamilyCard({text1, text2, image}) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 25,
-    marginTop: 70,
+    fontSize: 30,
+    textAlign: 'left',
+    marginLeft: 15,
+    marginTop: 15,
+    fontWeight: 'bold',
   },
   text2: {
     fontSize: 25,

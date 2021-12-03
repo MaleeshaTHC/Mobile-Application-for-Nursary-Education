@@ -2,14 +2,14 @@ import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function SchoolCard({text1, text2, image}) {
+export default function DescriptionCard({text1, text2, image}) {
   return (
     <View style={styles.card}>
       <Image
         source={image}
         style={{
           width: 300,
-          height: 270,
+          height: 260,
           marginTop: 50,
           borderRadius: 15,
         }}

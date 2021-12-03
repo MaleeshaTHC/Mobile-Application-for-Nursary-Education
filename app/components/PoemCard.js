@@ -16,21 +16,24 @@ export default function PoemCard({text1, text2, text3, name}) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 25,
+    fontSize: 30,
     marginTop: 70,
+    fontWeight: '500',
   },
   text2: {
-    fontSize: 25,
+    fontSize: 26,
     textAlign: 'left',
     marginLeft: 15,
     marginTop: 15,
+    fontWeight: '300',
   },
   text3: {
-    fontSize: 25,
+    fontSize: 20,
     textAlign: 'right',
     textAlignVertical: 'bottom',
-    marginBottom: 15,
+    marginBottom: 5,
     marginLeft: 150,
+    fontStyle: 'italic',
   },
   card: {
     width: 360,
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-around',
-    margin: 20,
+    margin: 30,
     marginTop: 70,
     backgroundColor: '#e6f1f2',
     borderRadius: 15,

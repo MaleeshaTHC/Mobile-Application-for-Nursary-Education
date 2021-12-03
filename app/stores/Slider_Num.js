@@ -90,10 +90,9 @@ const Slider_Num = props => {
           source={{uri: item.illustration}}
           containerStyle={styles.imageContainer}
           style={styles.image}
-          parallaxFactor={0.4}
+          parallaxFactor={0.19}
           {...parallaxProps}
         />
-        <Text style={styles.subtitle}>{item.subtitle}</Text>
       </View>
     );
   };

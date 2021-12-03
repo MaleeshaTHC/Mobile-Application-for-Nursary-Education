@@ -6,14 +6,15 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import FormButton from '../components/FormButton';
-import Slider_Alp from '../stores/Slider_Alp';
+import DescriptionCard from '../components/DescriptionCard';
 
 const AlphabetScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
@@ -22,24 +23,126 @@ const AlphabetScreen = ({navigation}) => {
     <ImageBackground
       source={require('../assets/images/background2.jpg')}
       style={styles.main}>
-      <View style={styles.header}>
-        <Text style={styles.text}>Let's Learn Alphabet</Text>
-      </View>
-      <View style={styles.body}>
-        <Slider_Alp />
-      </View>
-      <View style={styles.bottom}>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate('EnglishScreen')}>
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate('AlphabetQuiz')}>
-          <Text style={styles.buttonText}>Activity</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        <View style={styles.header}>
+          <Text style={styles.text}>Let's Learn Alphabet</Text>
+        </View>
+        <View style={styles.body}>
+          <ScrollView horizontal={true}>
+            <DescriptionCard
+              image={require('../assets/images/A.jpg')}
+              text1={'A for Apple'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/B.jpg')}
+              text1={'B for Bird'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/C.jpg')}
+              text1={'C for Crab'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/D.jpg')}
+              text1={'D for Dog'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/E.jpg')}
+              text1={'E for Elephant'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/F.jpg')}
+              text1={'F for Fox'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/G.jpg')}
+              text1={'G for Giraffe'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/H.jpg')}
+              text1={'H for Horse'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/I.jpg')}
+              text1={'I for Iguana'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/J.jpg')}
+              text1={'J for Jelly'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/K.jpg')}
+              text1={'K for Kangaroo'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/L.jpg')}
+              text1={'L for Lion'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/M.jpg')}
+              text1={'M for Monkey'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/O.jpg')}
+              text1={'O for Owl'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/P.jpg')}
+              text1={'P for Penguin'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/Q.jpg')}
+              text1={'Q for Queen'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/R.jpg')}
+              text1={'R for Rabbit'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/S.jpg')}
+              text1={'S for Sheep'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/T.jpg')}
+              text1={'T for Turtle'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/U.jpg')}
+              text1={'U for Umbrella'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/V.jpg')}
+              text1={'V for Vulture'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/W.jpg')}
+              text1={'W for Whale'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/X.jpg')}
+              text1={'X for Xiphias'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/Y.jpg')}
+              text1={'Y for Yak'}
+            />
+            <DescriptionCard
+              image={require('../assets/images/Z.jpg')}
+              text1={'Z for Zebra'}
+            />
+          </ScrollView>
+        </View>
+        <View style={styles.bottom}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('EnglishScreen')}>
+            <AntDesign name={'book'} size={45} />
+            <Text> Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AlphabetQuiz')}>
+            <AntDesign name={'edit'} size={45} />
+            <Text>Activity</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </ImageBackground>
   );
 };
@@ -54,7 +157,8 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 30,
+    marginTop: 10,
+    marginLeft: 10,
   },
   header: {
     flex: 1,
@@ -68,9 +172,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginBottom: 40,
+    marginLeft: 200,
+    marginTop: 70,
   },
   text: {
     fontSize: 33,

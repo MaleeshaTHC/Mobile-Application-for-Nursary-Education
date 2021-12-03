@@ -65,7 +65,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#4867aa"
-            backgroundColor="#88b0d3"
+            backgroundColor="#bfd4e7"
             onPress={() => fbLogin()}
           />
 
@@ -73,7 +73,7 @@ const LoginScreen = ({navigation}) => {
             buttonTitle="Sign In with Google"
             btnType="google"
             color="#de4d41"
-            backgroundColor="#88b0d3"
+            backgroundColor="#bfd4e7"
             onPress={() => googleLogin()}
           />
         </View>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     padding: 25,
     paddingTop: 60,
     paddingBottom: 100,
-    backgroundColor: '#f5dc88',
+    backgroundColor: '#faecbf',
   },
   logo: {
     height: 100,

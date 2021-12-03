@@ -36,18 +36,6 @@ const AddPostScreen = ({navigation}) => {
   const [transferred, setTransferred] = useState(0);
   const [post, setPost] = useState(null);
 
-  const takePhotoFromCamera = () => {
-    ImagePicker.openCamera({
-      width: 1200,
-      height: 780,
-      cropping: true,
-    }).then(image => {
-      console.log(image);
-      const imageUri = Platform.OS === 'ios' ? image.sourceURL : image.path;
-      setImage(imageUri);
-    });
-  };
-
   const choosePhotoFromLibrary = () => {
     ImagePicker.openPicker({
       width: 1200,
@@ -150,7 +138,7 @@ const AddPostScreen = ({navigation}) => {
         <InputField
           placeholder="Feed Your Profile with Marks                   Add something. ..."
           multiline
-          numberOfLines={3}
+          numberOfLines={4}
           value={post}
           onChangeText={content => setPost(content)}
         />

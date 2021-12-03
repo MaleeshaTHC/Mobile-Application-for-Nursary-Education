@@ -6,9 +6,9 @@ import {
   ImageBackground,
   Text,
   ScrollView,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 export default class ColorsScreen extends Component {
   constructor() {
     super();
@@ -161,21 +161,14 @@ export default class ColorsScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
-            onPress={this.NavigateToCreative}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToHome}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToQuiz}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="script-text" size={25} />
-          </TouchableHighlight>
+          <TouchableOpacity onPress={this.NavigateToCreative}>
+            <AntDesign name={'book'} size={45} />
+            <Text>  Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.NavigateToQuiz}>
+            <AntDesign name={'edit'} size={45} />
+            <Text>Activity</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
@@ -211,12 +204,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.5,
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginTop: 40,
+    marginLeft: 200,
   },
   images: {
     width: 60,

@@ -7,11 +7,11 @@ import {
   Text,
   ScrollView,
   ImageBackground,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import FamilyCard from '../components/Family';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import AntDesign from 'react-native-vector-icons/AntDesign';
 export default class MyFamScreen extends Component {
   constructor() {
     super();
@@ -36,7 +36,7 @@ export default class MyFamScreen extends Component {
           <Text style={styles.heading}>Family Members</Text>
         </View>
         <View style={styles.body}>
-          <ScrollView>
+          <ScrollView horizontal={true}>
             <View style={styles.card_container}>
               <FamilyCard
                 image={require('../assets/images/mother.jpg')}
@@ -80,16 +80,10 @@ export default class MyFamScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
-            onPress={this.NavigateToCreative}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToHome}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
-          </TouchableHighlight>
+          <TouchableOpacity onPress={this.NavigateToCreative}>
+            <AntDesign name={'book'} size={45} />
+            <Text>  Menu</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
@@ -111,10 +105,9 @@ const styles = StyleSheet.create({
     flex: 7.2,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
   },
   card_container: {
-    marginTop: 20,
+    marginLeft: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -125,12 +118,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.5,
+    flex: 0.8,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginTop: 40,
+    marginLeft: 330,
   },
   images: {
     width: 60,

@@ -11,13 +11,10 @@ import {
 import {AuthContext} from '../navigation/AuthProvider';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Card2 from '../components/card2';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
 
-import FormButton from '../components/FormButton';
-import Slider_Alp from '../stores/Slider_Alp';
-
-const AlphabetScreen = ({navigation}) => {
+const PhrasesScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
 
   return (
@@ -80,22 +77,20 @@ const AlphabetScreen = ({navigation}) => {
         </ScrollView>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate('EnglishScreen')}>
-          <Text style={styles.buttonText}>Back</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('EnglishScreen')}>
+          <AntDesign name={'book'} size={45} />
+          <Text>  Menu</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate('PhrasesQuiz')}>
-          <Text style={styles.buttonText}>Activity</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('PhrasesQuiz')}>
+          <AntDesign name={'edit'} size={45} />
+          <Text>Activity</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
   );
 };
 
-export default AlphabetScreen;
+export default PhrasesScreen;
 
 const styles = StyleSheet.create({
   main: {
@@ -119,9 +114,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginTop: 20,
+    marginLeft: 200,
+    marginTop: 25,
   },
   text: {
     fontSize: 33,

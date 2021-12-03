@@ -7,10 +7,10 @@ import {
   Text,
   ScrollView,
   ImageBackground,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import SchoolCard from '../components/School';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 export default class SchoolScreen extends Component {
   constructor() {
@@ -33,7 +33,7 @@ export default class SchoolScreen extends Component {
           <Text style={styles.heading}>School Members</Text>
         </View>
         <View style={styles.body}>
-          <ScrollView>
+          <ScrollView horizontal={true}>
             <View style={styles.card_container}>
               <SchoolCard
                 image={require('../assets/images/principal.jpg')}
@@ -51,16 +51,10 @@ export default class SchoolScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
-            onPress={this.NavigateToCreative}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToHome}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
-          </TouchableHighlight>
+         <TouchableOpacity onPress={this.NavigateToCreative}>
+            <AntDesign name={'book'} size={45} />
+            <Text>  Menu</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
@@ -85,7 +79,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   card_container: {
-    marginTop: 20,
+    marginLeft: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -96,12 +90,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.5,
+    flex: 0.8,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginTop: 40,
+    marginLeft: 330,
   },
   images: {
     width: 60,

@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import {
   View,
   StyleSheet,
-  TouchableHighlight,
+  TouchableOpacity,
   Text,
   ImageBackground,
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-import FormButton from '../components/FormButton';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Slider_Num from '../stores/Slider_Num';
 export default class NumbersScreen extends Component {
   constructor() {
@@ -37,21 +36,14 @@ export default class NumbersScreen extends Component {
           <Slider_Num />
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
-            onPress={this.NavigateToMath}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToHome}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={this.NavigateToNumQuiz}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="script-text" size={25} />
-          </TouchableHighlight>
+          <TouchableOpacity onPress={this.NavigateToMath}>
+            <AntDesign name={'book'} size={45} />
+            <Text>  Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.NavigateToNumQuiz}>
+            <AntDesign name={'edit'} size={45} />
+            <Text>Activity</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
@@ -80,12 +72,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.5,
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginTop: 40,
+    marginLeft: 200,
+    marginTop: 20,
+    marginBottom: 4,
   },
   heading: {
     fontSize: 33,
