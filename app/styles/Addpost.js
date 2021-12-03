@@ -18,9 +18,10 @@ export const InputField = styled.TextInput`
 `;
 
 export const AddImage = styled.Image`
-  width: 100%;
-  height: 250px;
-  margin-bottom: 15px;
+  width: 80%;
+  height: 350px;
+  border-radius: 10px;
+  margin-bottom: 70px;
 `;
 
 export const StatusWrapper = styled.View`

@@ -163,18 +163,6 @@ const Slider_Alp = props => {
           hasParallaxImages={true}
         />
       </View>
-      <View style={styles.navigator}>
-        <View style={styles.card1}>
-          <TouchableOpacity onPress={goBackward}>
-            <Text style={styles.slider_text1}>Prev</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.card2}>
-          <TouchableOpacity onPress={goForward}>
-            <Text style={styles.slider_text1}>next</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
     </View>
   );
 };
@@ -196,21 +184,21 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   item: {
-    width: screenWidth - 55,
-    height: screenWidth + 20,
+    width: screenWidth - 65,
+    height: screenWidth - 20,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20,
   },
   imageContainer: {
     flex: 1,
-    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
     backgroundColor: 'white',
     borderRadius: 20,
     width: 370,
   },
   image: {
     width: 100,
-    height: 200,
+    height: 180,
   },
   slider_text1: {
     fontSize: 15,
@@ -227,7 +215,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#f5dc88',
+    backgroundColor: '#faecbf',
     borderRadius: 15,
     marginRight: 50,
   },
@@ -235,7 +223,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    backgroundColor: '#f5dc88',
+    backgroundColor: '#faecbf',
     borderRadius: 15,
   },
 });

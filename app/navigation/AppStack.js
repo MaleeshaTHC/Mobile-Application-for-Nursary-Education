@@ -66,10 +66,10 @@ const TabStack = () => {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        activeTintColor: 'gray',
-        inactiveTintColor: '#f5dc88',
+        activeTintColor: '#fff',
+        inactiveTintColor: '#e6f1f2',
         style: {
-          backgroundColor: '#88b0d3',
+          backgroundColor: '#bfd4e7',
         },
       }}>
       <Tab.Screen
@@ -123,7 +123,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -136,7 +136,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -149,7 +149,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -162,7 +162,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -175,7 +175,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -188,7 +188,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#88b0d3',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -201,7 +201,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -214,7 +214,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -227,7 +227,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -240,7 +240,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -253,7 +253,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -266,7 +266,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -279,7 +279,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -292,7 +292,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -305,7 +305,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -318,7 +318,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -331,7 +331,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -344,7 +344,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -357,7 +357,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -370,7 +370,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#88b0d3',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -383,7 +383,7 @@ const HomeScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -404,7 +404,7 @@ const AlphabetScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -417,7 +417,7 @@ const AlphabetScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#88b0d3',
+            backgroundColor: '#bfd4e7',
           },
         })}
       />
@@ -438,7 +438,7 @@ const PhrasesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -451,7 +451,7 @@ const PhrasesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#88b0d3',
+            backgroundColor: '#bfd4e7',
           },
         })}
       />
@@ -472,7 +472,7 @@ const NumbersScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -506,7 +506,7 @@ const ShapesScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -540,7 +540,7 @@ const ColorsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -574,7 +574,7 @@ const PoemsScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -595,7 +595,7 @@ const MyFamScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -616,7 +616,7 @@ const SchoolScreenStack = ({navigation}) => {
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
           },
         })}
       />
@@ -708,7 +708,7 @@ const App = () => {
   return (
     <Drawer.Navigator
       drawerContentOptions={{
-        activeTintColor: '#88b0d3',
+        activeTintColor: '#bfd4e7',
         itemStyle: {marginVertical: 8},
       }}>
       <Drawer.Screen

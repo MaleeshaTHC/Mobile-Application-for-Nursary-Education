@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Card from '../components/Card';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 export default class CommunityScreen extends Component {
   constructor() {
     super();
@@ -54,21 +55,25 @@ export default class CommunityScreen extends Component {
           </View>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
+          <FontAwesome.Button
+            name="chevron-left"
+            size={23}
+            backgroundColor="#bfd4e7"
+            color="#e6f1f2"
             onPress={this.NavigateToBack}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
+          />
           <TouchableHighlight
             onPress={this.NavigateToHome}
             underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
+            <MaterialCommunityIcons name="home" size={25} color="#e6f1f2" />
           </TouchableHighlight>
-          <TouchableHighlight
+          <FontAwesome.Button
+            name="chevron-right"
+            size={23}
+            backgroundColor="#bfd4e7"
+            color="#e6f1f2"
             onPress={this.NavigateToNext}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-forward" size={25} />
-          </TouchableHighlight>
+          />
         </View>
       </ImageBackground>
     );
@@ -78,18 +83,15 @@ export default class CommunityScreen extends Component {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#d0f7e6',
   },
   body: {
     flex: 2,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 10,
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
   },
   card_container: {
-    marginTop: 20,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -119,8 +121,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     padding: 10,
-    marginTop: 55,
-    marginBottom: 20,
+    marginBottom: 40,
   },
   card_text: {
     fontSize: 25,

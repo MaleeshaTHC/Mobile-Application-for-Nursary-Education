@@ -142,7 +142,7 @@ const AddPostScreen = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/background.jpg')}
+      source={require('../assets/images/background2.jpg')}
       style={styles.container}>
       <InputWrapper>
         {image != null ? <AddImage source={{uri: image}} /> : null}
@@ -150,14 +150,14 @@ const AddPostScreen = ({navigation}) => {
         <InputField
           placeholder="Feed Your Profile with Marks                   Add something. ..."
           multiline
-          numberOfLines={10}
+          numberOfLines={3}
           value={post}
           onChangeText={content => setPost(content)}
         />
         {uploading ? (
           <StatusWrapper>
             <Text>{transferred} % Completed!</Text>
-            <ActivityIndicator size="large" color="#88b0d3" />
+            <ActivityIndicator size="large" color="#faecbf" />
           </StatusWrapper>
         ) : (
           <TouchableOpacity style={styles.buttonContainer} onPress={submitPost}>
@@ -170,9 +170,9 @@ const AddPostScreen = ({navigation}) => {
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
       </InputWrapper>
-      <ActionButton buttonColor="#88b0d3">
+      <ActionButton buttonColor="#faecbf">
         <ActionButton.Item
-          buttonColor="#88b0d3"
+          buttonColor="#faecbf"
           title="Choose Photo"
           onPress={choosePhotoFromLibrary}>
           <Icon name="md-images-outline" style={styles.actionButtonIcon} />
@@ -193,17 +193,16 @@ const styles = StyleSheet.create({
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
-    color: 'white',
   },
   buttonContainer: {
-    width: '50%',
+    width: '60%',
     height: windowHeight / 15,
-    backgroundColor: '#88b0d3',
-    padding: 10,
+    backgroundColor: '#faecbf',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 13,
     marginTop: 20,
+    marginRight: 70,
   },
   buttonText: {
     fontSize: 18,

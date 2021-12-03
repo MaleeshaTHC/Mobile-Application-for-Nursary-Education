@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
   panelButton: {
     padding: 13,
     borderRadius: 10,
-    backgroundColor: '#f5dc88',
+    backgroundColor: '#faecbf',
     alignItems: 'center',
     marginVertical: 7,
     width: '80%',
@@ -428,7 +428,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     width: '80%',
     height: windowHeight / 15,
-    backgroundColor: '#f5dc88',
+    backgroundColor: '#faecbf',
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',

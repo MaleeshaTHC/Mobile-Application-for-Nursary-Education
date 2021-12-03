@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Card from '../components/Card';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export default class MathsScreen extends Component {
   constructor() {
@@ -70,21 +71,25 @@ export default class MathsScreen extends Component {
           </View>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight
+          <FontAwesome.Button
+            name="chevron-left"
+            size={23}
+            backgroundColor="#bfd4e7"
+            color="#e6f1f2"
             onPress={this.NavigateToBack}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-backward" size={25} />
-          </TouchableHighlight>
+          />
           <TouchableHighlight
             onPress={this.NavigateToHome}
             underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} />
+            <MaterialCommunityIcons name="home" size={25} color="#e6f1f2" />
           </TouchableHighlight>
-          <TouchableHighlight
+          <FontAwesome.Button
+            name="chevron-right"
+            size={23}
+            backgroundColor="#bfd4e7"
+            color="#e6f1f2"
             onPress={this.NavigateToNext}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="step-forward" size={25} />
-          </TouchableHighlight>
+          />
         </View>
       </ImageBackground>
     );

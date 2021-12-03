@@ -189,7 +189,7 @@ const AlphabetQuiz = ({navigation}) => {
           style={{
             marginTop: 20,
             width: '80%',
-            backgroundColor: '#f5dc88',
+            backgroundColor: '#faecbf',
             padding: 20,
             borderRadius: 15,
             marginLeft: 42,
@@ -215,14 +215,14 @@ const AlphabetQuiz = ({navigation}) => {
           height: 20,
           borderRadius: 20,
           borderWidth: 0.1,
-          backgroundColor: '#f5dc88',
+          backgroundColor: '#faecbf',
         }}>
         <Animated.View
           style={[
             {
               height: 20,
               borderRadius: 20,
-              backgroundColor: '#88b0d3',
+              backgroundColor: '#bfd4e7',
             },
             {
               width: progressAnim,
@@ -316,7 +316,7 @@ const AlphabetQuiz = ({navigation}) => {
                 <TouchableOpacity
                   onPress={restartQuiz}
                   style={{
-                    backgroundColor: '#f5dc88',
+                    backgroundColor: '#faecbf',
                     padding: 20,
                     width: '40%',
                     borderRadius: 20,
@@ -333,7 +333,7 @@ const AlphabetQuiz = ({navigation}) => {
                 <TouchableOpacity
                   onPress={() => navigation.navigate('ActivityScreen')}
                   style={{
-                    backgroundColor: '#f5dc88',
+                    backgroundColor: '#faecbf',
                     padding: 20,
                     width: '40%',
                     borderRadius: 20,
@@ -368,7 +368,7 @@ const AlphabetQuiz = ({navigation}) => {
               <TouchableOpacity
                 onPress={() => navigation.navigate('ProfileScreen')}
                 style={{
-                  backgroundColor: '#88b0d3',
+                  backgroundColor: '#bfd4e7',
                   padding: 20,
                   width: '90%',
                   borderRadius: 20,

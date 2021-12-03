@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 180,
-    height: 200,
+    height: 260,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    margin: 8,
+    margin: 10,
     backgroundColor: '#e6f1f2',
     borderRadius: 15,
   },

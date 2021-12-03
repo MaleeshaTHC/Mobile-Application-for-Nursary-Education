@@ -4,11 +4,13 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableHighlight,
+  TouchableOpacity,
   ImageBackground,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {windowHeight, windowWidth} from '../constants/Dimensions';
 
 import FormButton from '../components/FormButton';
 import Slider_Alp from '../stores/Slider_Alp';
@@ -27,21 +29,16 @@ const AlphabetScreen = ({navigation}) => {
         <Slider_Alp />
       </View>
       <View style={styles.bottom}>
-        <TouchableHighlight
-          onPress={() => navigation.navigate('EnglishScreen')}
-          underlayColor={'none'}>
-          <MaterialCommunityIcons name="step-backward" size={25} />
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => navigation.navigate('HomeScreen')}
-          underlayColor={'none'}>
-          <MaterialCommunityIcons name="home" size={25} />
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => navigation.navigate('AlphabetQuiz')}
-          underlayColor={'none'}>
-          <MaterialCommunityIcons name="script-text" size={25} />
-        </TouchableHighlight>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate('EnglishScreen')}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate('AlphabetQuiz')}>
+          <Text style={styles.buttonText}>Activity</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -57,7 +54,7 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 30,
   },
   header: {
     flex: 1,
@@ -65,19 +62,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
+    marginTop: 20,
   },
   bottom: {
-    flex: 0.5,
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-around',
-    marginTop: 40,
+    marginBottom: 40,
   },
   text: {
     fontSize: 33,
     marginTop: 10,
     textAlign: 'center',
-    marginBottom: 20,
+  },
+  buttonContainer: {
+    width: '40%',
+    height: windowHeight / 15,
+    backgroundColor: '#faecbf',
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 13,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });

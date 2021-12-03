@@ -23,12 +23,12 @@ const HomeScreen = ({navigation}) => {
         style={styles.logo}
         source={require('../assets/images/logo.png')}
       />
-      <Text style={styles.text}>Welcome</Text>
+      <Text style={styles.text}>Hello !</Text>
       <Text style={styles.heading}>Let's Start Your</Text>
       <Text style={styles.heading}>Learning Journey !</Text>
       <Text />
       <Text />
-      <ScrollView>
+      <ScrollView horizontal={true}>
         <NavigationCard
           text={"Let's Go !"}
           image={require('../assets/images/english.jpg')}
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollview: {
-    flex: 3.5,
+    flex: 4,
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    margin: 50,
+    margin: 40,
   },
   logo: {
     width: 80,
@@ -76,15 +76,15 @@ const styles = StyleSheet.create({
     marginLeft: 320,
   },
   text: {
-    fontSize: 25,
+    fontSize: 28,
     textAlign: 'right',
-    marginRight: 20,
+    marginRight: 28,
     marginBottom: 50,
-    fontWeight: '100',
+    fontWeight: '300',
   },
   heading: {
     fontSize: 36,
     textAlign: 'center',
-    fontWeight: '100',
+    fontWeight: '300',
   },
 });

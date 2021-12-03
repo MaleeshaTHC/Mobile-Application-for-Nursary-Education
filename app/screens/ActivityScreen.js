@@ -14,7 +14,7 @@ import ActivityButton from '../components/ActivityButton';
 
 const ActivityScreen = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: '#f5dc88'}}>
+    <View style={{flex: 1, backgroundColor: '#faecbf'}}>
       <Text style={styles.heading}>Fun Activities</Text>
       <View style={styles.button_container}>
         <ActivityButton
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
-    backgroundColor: '#88b0d3',
+    backgroundColor: '#bfd4e7',
   },
 });

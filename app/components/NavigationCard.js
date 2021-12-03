@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginBottom: 100,
+    marginBottom: 125,
+    marginLeft: 12,
   },
   button: {
     width: 250,
