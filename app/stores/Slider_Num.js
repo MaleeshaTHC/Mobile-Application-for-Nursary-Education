@@ -11,59 +11,54 @@ import {
 
 const ENTRIES1 = [
   {
-    subtitle: 'Start From Here',
-    illustration:
-      'https://d24o39yp3ttic8.cloudfront.net/71CC77D2-3EA3-4A02-9A00-B9091CFC0E60/unzipped%2Fphoto1%2Fphoto1.jpg',
-  },
-  {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182670235.jpg',
-    subtitle: 'ONE',
+    subtitle: 'ONE        I ',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182670248.jpg',
-    subtitle: 'TWO',
+    subtitle: 'TWO        2',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182670259.jpg',
-    subtitle: 'THREE',
+    subtitle: 'THREE      3',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182670268.jpg',
-    subtitle: 'FOUR',
+    subtitle: 'FOUR       4',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/vector-illustration-set-school-kids-colorful-number-five-shaped-back-to-117688066.jpg',
-    subtitle: 'FIVE',
+    subtitle: 'FIVE       5',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182671597.jpg',
-    subtitle: 'SIX',
+    subtitle: 'SIX        6',
   },
   {
     illustration:
       'https://image.freepik.com/free-vector/flashcard-kindergarten-preschool-learning-counting-number-7-with-number-kids_283146-308.jpg',
-    subtitle: 'SEVEN',
+    subtitle: 'SEVEN      7',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182671629.jpg',
-    subtitle: 'EIGHT',
+    subtitle: 'EIGHT      8',
   },
   {
     illustration:
       'https://thumbs.dreamstime.com/z/flashcard-kindergarten-preschool-learning-to-counting-number-number-kids-flashcard-kindergarten-182671640.jpg',
-    subtitle: 'NINE',
+    subtitle: 'NINE       9',
   },
   {
     illustration:
       'https://previews.123rf.com/images/kankhem/kankhem2008/kankhem200800049/153296259-flashcard-for-kindergarten-and-preschool-learning-to-counting-number-10-with-a-number-of-kids-.jpg',
-    subtitle: 'TEN',
+    subtitle: 'TEN        10',
   },
 ];
 const {width: screenWidth} = Dimensions.get('window');
@@ -85,14 +80,24 @@ const Slider_Num = props => {
 
   const renderItem = ({item, index}, parallaxProps) => {
     return (
-      <View style={styles.item}>
-        <ParallaxImage
-          source={{uri: item.illustration}}
-          containerStyle={styles.imageContainer}
-          style={styles.image}
-          parallaxFactor={0.19}
-          {...parallaxProps}
-        />
+      <View>
+        <View style={styles.item}>
+          <ParallaxImage
+            source={{uri: item.illustration}}
+            containerStyle={styles.imageContainer}
+            style={styles.image}
+            parallaxFactor={0.19}
+            {...parallaxProps}
+          />
+        </View>
+        <Text
+          style={{
+            fontSize: 35,
+            marginTop: 30,
+            fontWeight: '400',
+          }}>
+          {item.subtitle}
+        </Text>
       </View>
     );
   };

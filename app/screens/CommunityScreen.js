@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Text,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 import Card from '../components/Card';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -52,6 +53,23 @@ export default class CommunityScreen extends Component {
               onPress={this.NavigateToSchool}
               name={'book'}
             />
+            <View>
+              <Image
+                source={{
+                  uri: 'https://media.istockphoto.com/vectors/young-teacher-with-joyful-kids-vector-id1251666012?k=20&m=1251666012&s=612x612&w=0&h=B3qK4v77dodW1bdh6dRksJ5bBSxn1Pu4TXMTQLvA-LI=',
+                }}
+                style={{
+                  width: 380,
+                  height: 260,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  alignSelf: 'center',
+                  margin: 10,
+                  backgroundColor: '#e6f1f2',
+                  borderRadius: 15,
+                }}
+              />
+            </View>
           </View>
         </View>
         <View style={styles.footer}>

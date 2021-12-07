@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Text,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 import Card from '../components/Card';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -54,6 +55,24 @@ export default class CreativeScreen extends Component {
               onPress={this.NavigateToPoems}
               name={'book'}
             />
+
+            <View>
+              <Image
+                source={{
+                  uri: 'https://thumbs.dreamstime.com/z/cute-little-girl-show-close-mouth-finger-pose-227545171.jpg',
+                }}
+                style={{
+                  width: 180,
+                  height: 260,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  alignSelf: 'center',
+                  margin: 10,
+                  backgroundColor: '#e6f1f2',
+                  borderRadius: 15,
+                }}
+              />
+            </View>
             <Card
               main={'Quiz of Colors'}
               onPress={this.NavigateToColorsQuiz}
@@ -102,7 +121,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
   },
   container1: {
     justifyContent: 'center',
