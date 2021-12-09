@@ -10,6 +10,7 @@ import {
   StyleSheet,
   ScrollView,
   ImageBackground,
+  Modal,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider';
 import {windowHeight, windowWidth} from '../constants/Dimensions';
@@ -25,6 +26,7 @@ const ProfileScreen = ({navigation, route}) => {
   const [loading, setLoading] = useState(true);
   const [deleted, setDeleted] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [show1, setShow1] = useState(false);
 
   const fetchPosts = async () => {
     try {
@@ -103,7 +105,7 @@ const ProfileScreen = ({navigation, route}) => {
             }}
           />
           <TouchableOpacity
-            onPress={() => logout()}
+            onPress={() => setShow1(true)}
             style={{
               alignItems: 'center',
             }}>
@@ -114,6 +116,24 @@ const ProfileScreen = ({navigation, route}) => {
             />
             <Text>Logout</Text>
           </TouchableOpacity>
+          <Modal transparent={true} visible={show1}>
+            <View style={{backgroundColor: '#000000aa', flex: 1}}>
+              <View style={styles.modal_view}>
+                <Text style={styles.modal_Text}>
+                  Are you sure, you want to logout ?
+                </Text>
+                <View style={styles.modal_btnWrap}>
+                  <Text />
+                  <TouchableOpacity onPress={() => logout()}>
+                    <Text style={styles.modal_btn}>Yes</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setShow1(false)}>
+                    <Text style={styles.modal_btn}> No</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </Modal>
           <Text style={styles.userName}>
             {userData ? userData.fname || 'Test' : 'Test'}{' '}
             {userData ? userData.lname || 'User' : 'User'}
@@ -214,9 +234,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 13,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  modal_view: {
+    flex: 0.3,
+    width: 350,
+    backgroundColor: '#bfd4e7',
+    padding: 35,
+    borderRadius: 25,
+    marginTop: 300,
+    marginLeft: 35,
+  },
+  modal_Text: {
+    fontSize: 23,
+  },
+  modal_btnWrap: {
+    flex: 1,
+    flexDirection: 'row',
+    marginLeft: 100,
+  },
+  modal_btn: {
+    width: 80,
+    height: 30,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontSize: 20,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    marginHorizontal: 10,
+    marginTop: 60,
+    backgroundColor: '#faecbf',
+    borderRadius: 5,
   },
 });

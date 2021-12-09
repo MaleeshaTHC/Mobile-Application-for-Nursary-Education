@@ -124,10 +124,12 @@ export default Slider_Num;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    elevation: 10,
   },
   slider: {
     flex: 1,
     marginTop: 15,
+    elevation: 10,
   },
   navigator: {
     flexDirection: 'row',
@@ -141,12 +143,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
+    elevation: 10,
   },
   imageContainer: {
     flex: 1,
     backgroundColor: 'white',
     borderRadius: 20,
     width: 370,
+    elevation: 15,
   },
   image: {
     width: 100,

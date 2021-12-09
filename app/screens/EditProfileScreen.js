@@ -242,13 +242,13 @@ const EditProfileScreen = ({navigation}) => {
                     <MaterialCommunityIcons
                       name="camera"
                       size={35}
-                      color="#fff"
+                      color="#333"
                       style={{
                         opacity: 0.7,
                         alignItems: 'center',
                         justifyContent: 'center',
                         borderWidth: 1,
-                        borderColor: '#fff',
+                        borderColor: '#333',
                         borderRadius: 10,
                       }}
                     />
@@ -397,6 +397,7 @@ const styles = StyleSheet.create({
     marginVertical: 7,
     width: '80%',
     justifyContent: 'center',
+    elevation: 5,
   },
   panelButtonTitle: {
     fontSize: 17,
@@ -433,6 +434,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 13,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 18,

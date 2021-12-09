@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#f5fffa',
+    elevation: 3,
   },
   iconStyle: {
     padding: 10,

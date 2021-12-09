@@ -53,13 +53,13 @@ export default class CommunityScreen extends Component {
               onPress={this.NavigateToSchool}
               name={'book'}
             />
-            <View>
+            <View style={{elevation: 10}}>
               <Image
                 source={{
                   uri: 'https://media.istockphoto.com/vectors/young-teacher-with-joyful-kids-vector-id1251666012?k=20&m=1251666012&s=612x612&w=0&h=B3qK4v77dodW1bdh6dRksJ5bBSxn1Pu4TXMTQLvA-LI=',
                 }}
                 style={{
-                  width: 380,
+                  width: 375,
                   height: 260,
                   alignItems: 'center',
                   justifyContent: 'center',

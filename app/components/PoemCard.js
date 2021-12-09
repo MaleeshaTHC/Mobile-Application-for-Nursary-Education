@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     margin: 25,
     backgroundColor: '#e6f1f2',
     borderRadius: 15,
+    elevation: 10,
   },
   card2: {
     width: 335,
@@ -65,5 +66,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    elevation: 15,
   },
 });

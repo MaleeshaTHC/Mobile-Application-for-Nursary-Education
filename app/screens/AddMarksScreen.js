@@ -64,10 +64,10 @@ const AddPostScreen = ({navigation}) => {
         comments: null,
       })
       .then(() => {
-        console.log('Post Added!');
+        console.log('Feed Added!');
         Alert.alert(
-          'Post published!',
-          'Your post has been published Successfully!',
+          'Feed Added!',
+          'Your feed has been published Successfully now in your profile!',
         );
         setPost(null);
       })
@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
     borderRadius: 13,
     marginTop: 20,
     marginRight: 70,
+    elevation: 5,
   },
   buttonText: {
     fontSize: 18,

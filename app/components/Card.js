@@ -36,5 +36,6 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: '#fff',
     borderRadius: 15,
+    elevation: 10,
   },
 });

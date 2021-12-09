@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    margin: 40,
+    margin: 45,
   },
   logo: {
     width: 80,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: 'right',
     marginRight: 28,
-    marginBottom: 50,
+    marginBottom: 30,
     fontWeight: '300',
   },
   heading: {

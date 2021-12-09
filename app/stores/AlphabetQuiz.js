@@ -9,6 +9,7 @@ import {
   Modal,
   Animated,
   ImageBackground,
+  StyleSheet,
 } from 'react-native';
 import {COLORS} from '../constants';
 import alphabetData from './alphabetData/alphabetData';
@@ -23,6 +24,7 @@ const AlphabetQuiz = ({navigation}) => {
   const [score, setScore] = useState(0);
   const [showNextButton, setShowNextButton] = useState(false);
   const [showScoreModal, setShowScoreModal] = useState(false);
+  const [show1, setShow1] = useState(false);
 
   const validateAnswer = selectedOption => {
     let correct_option = allQuestions[currentQuestionIndex].correct_option;
@@ -193,6 +195,7 @@ const AlphabetQuiz = ({navigation}) => {
             padding: 20,
             borderRadius: 15,
             marginLeft: 42,
+            elevation: 10,
           }}>
           <Text style={{fontSize: 20, textAlign: 'center'}}>Next</Text>
         </TouchableOpacity>
@@ -321,6 +324,7 @@ const AlphabetQuiz = ({navigation}) => {
                     width: '40%',
                     borderRadius: 20,
                     margin: 15,
+                    elevation: 10,
                   }}>
                   <Text
                     style={{
@@ -331,13 +335,14 @@ const AlphabetQuiz = ({navigation}) => {
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate('ActivityScreen')}
+                  onPress={() => setShow1(true)}
                   style={{
                     backgroundColor: '#faecbf',
                     padding: 20,
                     width: '40%',
                     borderRadius: 20,
                     margin: 15,
+                    elevation: 10,
                   }}>
                   <Text
                     style={{
@@ -347,6 +352,25 @@ const AlphabetQuiz = ({navigation}) => {
                     Exit
                   </Text>
                 </TouchableOpacity>
+                <Modal transparent={true} visible={show1}>
+                  <View style={{backgroundColor: '#000000aa', flex: 1}}>
+                    <View style={styles.modal_view}>
+                      <Text style={styles.modal_Text}>
+                        Are you sure, you want to exit from quiz ?
+                      </Text>
+                      <View style={styles.modal_btnWrap}>
+                        <Text />
+                        <TouchableOpacity
+                          onPress={() => navigation.navigate('ActivityScreen')}>
+                          <Text style={styles.modal_btn}> Yes</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => setShow1(false)}>
+                          <Text style={styles.modal_btn}>No</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  </View>
+                </Modal>
               </View>
               <Text />
               <Text />
@@ -391,3 +415,38 @@ const AlphabetQuiz = ({navigation}) => {
 };
 
 export default AlphabetQuiz;
+
+const styles = StyleSheet.create({
+  modal_view: {
+    flex: 0.3,
+    width: 350,
+    backgroundColor: '#bfd4e7',
+    padding: 35,
+    borderRadius: 25,
+    marginTop: 300,
+    marginLeft: 35,
+    elevation: 5,
+  },
+  modal_Text: {
+    fontSize: 23,
+  },
+  modal_btnWrap: {
+    flex: 1,
+    flexDirection: 'row',
+    marginLeft: 100,
+  },
+  modal_btn: {
+    width: 80,
+    height: 30,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontSize: 20,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    marginHorizontal: 10,
+    marginTop: 60,
+    backgroundColor: '#faecbf',
+    borderRadius: 5,
+    elevation: 5,
+  },
+});

@@ -42,6 +42,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Yellow</Text>
               </View>
@@ -52,6 +53,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Green</Text>
               </View>
@@ -62,6 +64,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Blue</Text>
               </View>
@@ -72,6 +75,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Orange</Text>
               </View>
@@ -82,6 +86,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Red</Text>
               </View>
@@ -92,6 +97,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Pink</Text>
               </View>
@@ -102,6 +108,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Purple</Text>
               </View>
@@ -112,6 +119,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Brown</Text>
               </View>
@@ -122,6 +130,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Gray</Text>
               </View>
@@ -132,6 +141,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>Gold</Text>
               </View>
@@ -142,6 +152,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>White</Text>
               </View>
@@ -152,6 +163,7 @@ export default class ColorsScreen extends Component {
                   height: 100,
                   borderRadius: 15,
                   marginTop: 35,
+                  elevation: 10,
                 }}>
                 <Text style={styles.card_text}>
                   <Text style={{color: 'white'}}>Black</Text>
