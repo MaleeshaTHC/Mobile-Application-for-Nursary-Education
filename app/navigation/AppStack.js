@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable eslint-comments/no-unused-disable */
+/* eslint-disable eslint-comments/no-unused-disable */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
@@ -5,6 +8,7 @@
 // https://aboutreact.com/tab-view-inside-navigation-drawer-sidebar-with-react-navigation/
 
 import 'react-native-gesture-handler';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 import React, {useContext} from 'react';
 import {View, TouchableOpacity, Image, Text} from 'react-native';
@@ -14,6 +18,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AuthContext} from '../navigation/AuthProvider';
+import {DrawerContent} from '../screens/DrawerContent';
 
 import HomeScreen from '../screens/HomeScreen';
 import PhrasesScreen from '../screens/PhrasesScreen';
@@ -431,8 +436,8 @@ const PhrasesScreenStack = ({navigation}) => {
   return (
     <Stack.Navigator initialRouteName="PhrasesScreen">
       <Stack.Screen
-        name="AlphabetScreen"
-        component={AlphabetScreen}
+        name="PhrasesScreen"
+        component={PhrasesScreen}
         options={() => ({
           headerTitle: '',
           headerLeft: () => (
@@ -715,63 +720,27 @@ function ActivityStack({navigation}) {
 
 const App = () => {
   return (
-    <Drawer.Navigator
-      drawerContentOptions={{
-        activeTintColor: '#faa08c',
-        itemStyle: {marginVertical: 10},
-        backgroundColor: '#eeeed1',
-      }}>
-      <Drawer.Screen
-        name="HomeScreenStack"
-        options={{drawerLabel: 'Home'}}
-        component={HomeScreenStack}
-      />
-      <Drawer.Screen
-        name="AlphabetScreenStack"
-        options={{drawerLabel: 'Alphabet'}}
-        component={AlphabetScreenStack}
-      />
-      <Drawer.Screen
-        name="PhrasesScreen"
-        options={{drawerLabel: 'Phrases'}}
-        component={PhrasesScreenStack}
-      />
-      <Drawer.Screen
-        name="NumbersScreen"
-        options={{drawerLabel: 'Numbers'}}
-        component={NumbersScreenStack}
-      />
-      <Drawer.Screen
-        name="ShapesScreen"
-        options={{drawerLabel: 'Shapes'}}
-        component={ShapesScreenStack}
-      />
-      <Drawer.Screen
-        name="ColorsScreen"
-        options={{drawerLabel: 'Colors'}}
-        component={ColorsScreenStack}
-      />
-      <Drawer.Screen
-        name="PoemsScreen"
-        options={{drawerLabel: 'Poems'}}
-        component={PoemsScreenStack}
-      />
-      <Drawer.Screen
-        name="MyFamScreen"
-        options={{drawerLabel: 'My Family'}}
-        component={MyFamScreenStack}
-      />
-      <Drawer.Screen
-        name="SchoolScreen"
-        options={{drawerLabel: 'My School'}}
-        component={SchoolScreenStack}
-      />
-      <Drawer.Screen
-        name="ActivityScreen"
-        options={{drawerLabel: 'Activities'}}
-        component={ActivityStack}
-      />
-    </Drawer.Navigator>
+    <PaperProvider>
+      <Drawer.Navigator
+        drawerContent={props => <DrawerContent {...props} />}
+        drawerContentOptions={{
+          activeTintColor: '#faa08c',
+          itemStyle: {marginVertical: 10},
+          backgroundColor: '#eeeed1',
+        }}>
+        <Drawer.Screen name="HomeScreenStack" component={HomeScreenStack} />
+        <Drawer.Screen name="ProfileScreen" component={ProfileScreenStack} />
+        <Drawer.Screen name="AlphabetScreen" component={AlphabetScreenStack} />
+        <Drawer.Screen name="PhrasesScreen" component={PhrasesScreenStack} />
+        <Drawer.Screen name="NumbersScreen" component={NumbersScreenStack} />
+        <Drawer.Screen name="ShapesScreen" component={ShapesScreenStack} />
+        <Drawer.Screen name="ColorsScreen" component={ColorsScreenStack} />
+        <Drawer.Screen name="PoemsScreen" component={PoemsScreenStack} />
+        <Drawer.Screen name="MyFamScreen" component={MyFamScreenStack} />
+        <Drawer.Screen name="SchoolScreen" component={SchoolScreenStack} />
+        <Drawer.Screen name="ActivityScreen" component={ActivityStack} />
+      </Drawer.Navigator>
+    </PaperProvider>
   );
 };
 
