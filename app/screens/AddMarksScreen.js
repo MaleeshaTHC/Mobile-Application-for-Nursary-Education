@@ -130,7 +130,7 @@ const AddPostScreen = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/background2.jpg')}
+      source={require('../assets/images/background.jpg')}
       style={styles.container}>
       <InputWrapper>
         {image != null ? <AddImage source={{uri: image}} /> : null}
@@ -174,7 +174,7 @@ export default AddPostScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
+    flex: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },

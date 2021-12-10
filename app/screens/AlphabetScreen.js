@@ -133,13 +133,14 @@ const AlphabetScreen = ({navigation}) => {
         </View>
         <View style={styles.bottom}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('EnglishScreen')}>
-            <AntDesign name={'book'} size={45} />
-            <Text> Menu</Text>
+            onPress={() => navigation.navigate('EnglishScreen')}
+            style={styles.button}>
+            <Text style={styles.btn_txt}>Menu</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('AlphabetQuiz')}>
-            <AntDesign name={'edit'} size={45} />
-            <Text>Activity</Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AlphabetQuiz')}
+            style={styles.button}>
+            <Text style={styles.btn_txt}>Activity</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -171,11 +172,11 @@ const styles = StyleSheet.create({
   bottom: {
     flex: 1,
     flexDirection: 'row',
-    flexWrap: 'wrap',
     alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    marginLeft: 200,
-    marginTop: 70,
+    justifyContent: 'center',
+    marginBottom: 10,
+    marginLeft: 100,
+    marginTop: 20,
   },
   text: {
     fontSize: 33,
@@ -194,5 +195,18 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#bfebce',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

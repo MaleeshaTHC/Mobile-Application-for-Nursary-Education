@@ -83,21 +83,26 @@ export default class CreativeScreen extends Component {
         <View style={styles.footer}>
           <FontAwesome.Button
             name="chevron-left"
-            size={23}
-            backgroundColor="#bfd4e7"
-            color="#e6f1f2"
+            size={35}
+            backgroundColor="#88d9ca"
+            color="#fff"
             onPress={this.NavigateToBack}
+            borderRadius={10}
           />
-          <TouchableHighlight
+          <MaterialCommunityIcons.Button
             onPress={this.NavigateToHome}
-            underlayColor={'none'}>
-            <MaterialCommunityIcons name="home" size={25} color="#e6f1f2" />
-          </TouchableHighlight>
+            name="home"
+            size={35}
+            backgroundColor="#88d9ca"
+            color="#fff"
+          />
+
           <FontAwesome.Button
             name="chevron-right"
-            size={23}
-            backgroundColor="#bfd4e7"
-            color="#e6f1f2"
+            size={35}
+            color="#fff"
+            backgroundColor="#88d9ca"
+            borderRadius={10}
             onPress={this.NavigateToNext}
           />
         </View>
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.5,
+    flex: 0.55,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',

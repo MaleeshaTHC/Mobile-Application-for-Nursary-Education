@@ -217,14 +217,14 @@ const ShapesQuiz = ({navigation}) => {
           height: 20,
           borderRadius: 20,
           borderWidth: 0.1,
-          backgroundColor: '#faecbf',
+          backgroundColor: '#fcf1d1',
         }}>
         <Animated.View
           style={[
             {
               height: 20,
               borderRadius: 20,
-              backgroundColor: '#bfd4e7',
+              backgroundColor: '#faa692',
             },
             {
               width: progressAnim,
@@ -237,7 +237,7 @@ const ShapesQuiz = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/background2.jpg')}
+      source={require('../assets/images/background.jpg')}
       style={{
         flex: 1,
       }}>
@@ -275,7 +275,7 @@ const ShapesQuiz = ({navigation}) => {
             }}>
             <View
               style={{
-                backgroundColor: '#e6f1f2',
+                backgroundColor: '#fff',
                 width: '75%',
                 borderRadius: 50,
                 padding: 25,
@@ -318,11 +318,12 @@ const ShapesQuiz = ({navigation}) => {
                 <TouchableOpacity
                   onPress={restartQuiz}
                   style={{
-                    backgroundColor: '#faecbf',
+                    backgroundColor: '#fcf1d1',
                     padding: 20,
                     width: '40%',
                     borderRadius: 20,
                     margin: 15,
+                    elevation: 5,
                   }}>
                   <Text
                     style={{
@@ -335,11 +336,12 @@ const ShapesQuiz = ({navigation}) => {
                 <TouchableOpacity
                   onPress={() => setShow1(true)}
                   style={{
-                    backgroundColor: '#faecbf',
+                    backgroundColor: '#fcf1d1',
                     padding: 20,
                     width: '40%',
                     borderRadius: 20,
                     margin: 15,
+                    elevation: 5,
                   }}>
                   <Text
                     style={{
@@ -389,11 +391,12 @@ const ShapesQuiz = ({navigation}) => {
               <TouchableOpacity
                 onPress={() => navigation.navigate('ProfileScreen')}
                 style={{
-                  backgroundColor: '#bfd4e7',
+                  backgroundColor: '#a6cebe',
                   padding: 20,
                   width: '90%',
                   borderRadius: 20,
                   marginBottom: 20,
+                  elevation: 10,
                 }}>
                 <Text
                   style={{
@@ -407,6 +410,18 @@ const ShapesQuiz = ({navigation}) => {
           </ImageBackground>
         </Modal>
       </View>
+      <View style={{flexDirection: 'row', marginBottom: 20, marginLeft: 130}}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ShapesScreen')}
+          style={styles.button}>
+          <Text style={styles.btn_txt}>Lesson</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('HomeScreen')}
+          style={styles.button}>
+          <Text style={styles.btn_txt}>Exit</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -417,7 +432,7 @@ const styles = StyleSheet.create({
   modal_view: {
     flex: 0.3,
     width: 350,
-    backgroundColor: '#bfd4e7',
+    backgroundColor: '#fff',
     padding: 35,
     borderRadius: 25,
     marginTop: 300,
@@ -443,7 +458,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 60,
     backgroundColor: '#faecbf',
-    borderRadius: 5,
+    borderRadius: 15,
     elevation: 5,
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#fecda2',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

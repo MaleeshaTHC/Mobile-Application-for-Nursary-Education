@@ -15,7 +15,7 @@ export default ActivityButton;
 const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 25,
-    width: '65%',
+    width: '75%',
     height: windowHeight / 11,
     backgroundColor: '#faecbf',
     padding: 20,

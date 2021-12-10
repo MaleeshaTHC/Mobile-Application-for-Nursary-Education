@@ -62,9 +62,10 @@ const PoemsScreen = ({navigation}) => {
         </ScrollView>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity onPress={() => navigation.navigate('CreativeScreen')}>
-          <AntDesign name={'book'} size={45} />
-          <Text>  Menu</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('CreativeScreen')}
+          style={styles.button}>
+          <Text style={styles.btn_txt}> Menu</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -96,14 +97,27 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'flex-end',
     justifyContent: 'space-around',
-    marginLeft: 320,
+    marginLeft: 250,
     marginTop: 20,
-    marginBottom: 4,
+    marginBottom: 15,
   },
   text: {
     fontSize: 33,
     marginTop: 10,
     textAlign: 'center',
     marginBottom: 20,
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#bfebce',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

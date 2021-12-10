@@ -17,7 +17,7 @@ const HomeScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
   return (
     <ImageBackground
-      source={require('../assets/images/background2.jpg')}
+      source={require('../assets/images/background.jpg')}
       style={styles.safearea}>
       <Image
         style={styles.logo}

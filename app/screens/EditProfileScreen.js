@@ -195,7 +195,7 @@ const EditProfileScreen = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/background2.jpg')}
+      source={require('../assets/images/background.jpg')}
       style={styles.container}>
       <ScrollView>
         <BottomSheet

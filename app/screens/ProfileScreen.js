@@ -91,7 +91,7 @@ const ProfileScreen = ({navigation, route}) => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/background2.jpg')}
+      source={require('../assets/images/background.jpg')}
       style={{flex: 1}}>
       <ScrollView>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   modal_view: {
     flex: 0.3,
     width: 350,
-    backgroundColor: '#bfd4e7',
+    backgroundColor: '#fff',
     padding: 35,
     borderRadius: 25,
     marginTop: 300,
@@ -268,6 +268,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 60,
     backgroundColor: '#faecbf',
-    borderRadius: 5,
+    borderRadius: 15,
   },
 });

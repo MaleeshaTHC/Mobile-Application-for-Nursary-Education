@@ -77,13 +77,15 @@ const PhrasesScreen = ({navigation}) => {
         </ScrollView>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity onPress={() => navigation.navigate('EnglishScreen')}>
-          <AntDesign name={'book'} size={45} />
-          <Text>  Menu</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('EnglishScreen')}
+          style={styles.button}>
+          <Text style={styles.btn_txt}>Menu</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('PhrasesQuiz')}>
-          <AntDesign name={'edit'} size={45} />
-          <Text>Activity</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('PhrasesQuiz')}
+          style={styles.button}>
+          <Text style={styles.btn_txt}>Activity</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -97,13 +99,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   body: {
-    flex: 8,
+    flex: 7.5,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 15,
   },
   header: {
-    flex: 1,
+    flex: 0.8,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomLeftRadius: 100,
@@ -111,13 +112,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   bottom: {
-    flex: 1,
+    flex: 0.7,
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    marginTop: 10,
     alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    marginLeft: 200,
-    marginTop: 25,
+    justifyContent: 'center',
+    marginBottom: 15,
+    marginLeft: 100,
   },
   text: {
     fontSize: 33,
@@ -136,5 +137,18 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#bfebce',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

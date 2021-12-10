@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import SchoolCard from '../components/School';
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default class SchoolScreen extends Component {
   constructor() {
@@ -51,9 +51,10 @@ export default class SchoolScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.footer}>
-         <TouchableOpacity onPress={this.NavigateToCreative}>
-            <AntDesign name={'book'} size={45} />
-            <Text>  Menu</Text>
+          <TouchableOpacity
+            onPress={this.NavigateToCreative}
+            style={styles.button}>
+            <Text style={styles.btn_txt}>Menu</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -90,12 +91,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footer: {
-    flex: 0.8,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flex: 1,
     alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    marginLeft: 330,
+    marginRight: 25,
+    marginBottom: 50,
   },
   images: {
     width: 60,
@@ -113,5 +112,18 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     marginTop: 30,
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#bfebce',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

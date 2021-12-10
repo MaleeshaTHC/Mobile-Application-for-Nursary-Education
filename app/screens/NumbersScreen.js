@@ -36,13 +36,13 @@ export default class NumbersScreen extends Component {
           <Slider_Num />
         </View>
         <View style={styles.footer}>
-          <TouchableOpacity onPress={this.NavigateToMath}>
-            <AntDesign name={'book'} size={45} />
-            <Text>  Menu</Text>
+          <TouchableOpacity onPress={this.NavigateToMath} style={styles.button}>
+            <Text style={styles.btn_txt}>Menu</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.NavigateToNumQuiz}>
-            <AntDesign name={'edit'} size={45} />
-            <Text>Activity</Text>
+          <TouchableOpacity
+            onPress={this.NavigateToNumQuiz}
+            style={styles.button}>
+            <Text style={styles.btn_txt}>Activity</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -74,17 +74,29 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    marginLeft: 200,
     marginTop: 20,
-    marginBottom: 4,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    marginBottom: 25,
+    marginLeft: 100,
   },
   heading: {
     fontSize: 33,
     marginTop: 10,
     textAlign: 'center',
     marginBottom: 20,
+  },
+  button: {
+    width: 120,
+    height: 50,
+    backgroundColor: '#bfebce',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+    elevation: 10,
+  },
+  btn_txt: {
+    fontSize: 20,
   },
 });

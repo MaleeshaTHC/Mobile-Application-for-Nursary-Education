@@ -14,7 +14,9 @@ import ActivityButton from '../components/ActivityButton';
 
 const ActivityScreen = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: '#faecbf'}}>
+    <ImageBackground
+      source={require('../assets/images/background.jpg')}
+      style={styles.safearea}>
       <Text style={styles.heading}>Fun Activities</Text>
       <View style={styles.button_container}>
         <ActivityButton
@@ -38,13 +40,16 @@ const ActivityScreen = ({navigation}) => {
           onPress={() => navigation.navigate('ColorsQuiz')}
         />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
 export default ActivityScreen;
 
 const styles = StyleSheet.create({
+  safearea: {
+    flex: 1,
+  },
   heading: {
     fontSize: 40,
     marginTop: 25,
@@ -58,6 +63,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderTopLeftRadius: 200,
     borderTopRightRadius: 200,
-    backgroundColor: '#bfd4e7',
   },
 });

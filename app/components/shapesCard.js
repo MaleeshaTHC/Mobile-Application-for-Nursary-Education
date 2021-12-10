@@ -23,7 +23,7 @@ export default function ShapesCard({text, image, onPress}) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: '#dfedcb',
     width: 350,
     height: 380,
     borderRadius: 15,
