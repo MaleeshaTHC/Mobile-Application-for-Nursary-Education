@@ -17,18 +17,13 @@ export const AuthProvider = ({children}) => {
         setUser,
         login: async (email, password) => {
           try {
-            setErrortext('');
-            if (!email) {
-              alert('Please fill Email');
-              return;
-            }
-            if (!password) {
-              alert('Please fill Password');
+            if (!email || !password) {
+              alert('Please fill Details');
               return;
             }
             await auth().signInWithEmailAndPassword(email, password);
           } catch (e) {
-            console.log(e);
+            alert(e);
           }
         },
         googleLogin: async () => {
@@ -44,10 +39,10 @@ export const AuthProvider = ({children}) => {
             await auth()
               .signInWithCredential(googleCredential)
               .catch(error => {
-                console.log('Something went wrong with sign up: ', error);
+                alert('Something went wrong with signin:\n\n' + error);
               });
           } catch (error) {
-            console.log({error});
+            alert({error});
           }
         },
         fbLogin: async () => {
@@ -78,21 +73,20 @@ export const AuthProvider = ({children}) => {
             await auth()
               .signInWithCredential(facebookCredential)
               .catch(error => {
-                console.log('Something went wrong with sign up: ', error);
+                alert('Something went wrong with signin:\n\n' + error);
               });
           } catch (error) {
-            console.log({error});
+            alert({error});
           }
         },
         register: async (email, password, confirmPassword) => {
           try {
-            setErrortext('');
-            if (!email) {
-              alert('Please fill Email !');
+            if (!email || !password || !confirmPassword) {
+              alert('Please fill Details');
               return;
             }
-            if (!password) {
-              alert('Please fill Password !');
+            if (password !== confirmPassword) {
+              alert('Password not matched with the confirm password.');
               return;
             }
             await auth()
@@ -110,25 +104,25 @@ export const AuthProvider = ({children}) => {
                   })
                   //ensure we catch any errors at this stage to advise us if something does go wrong
                   .catch(error => {
-                    console.log(
-                      'Something went wrong with added user to firestore: ',
-                      error,
+                    alert(
+                      'Something went wrong with added user to firestore:\n\n' +
+                        error,
                     );
                   });
               })
               //we need to catch the whole sign up process if it fails too.
               .catch(error => {
-                console.log('Something went wrong with sign up: ', error);
+                alert('Something went wrong with sign up:\n\n' + error);
               });
           } catch (e) {
-            console.log(e);
+            alert(e);
           }
         },
         logout: async () => {
           try {
             await auth().signOut();
           } catch (e) {
-            console.log(e);
+            alert(e);
           }
         },
       }}>
