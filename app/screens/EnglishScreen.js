@@ -28,7 +28,7 @@ export default class MathsScreen extends Component {
     this.props.navigation.navigate('PhrasesQuiz');
   };
   NavigateToBack = () => {
-    this.props.navigation.navigate('HomeScreen');
+    this.props.navigation.navigate('CommunityScreen');
   };
   NavigateToHome = () => {
     this.props.navigation.navigate('HomeScreen');
@@ -73,23 +73,23 @@ export default class MathsScreen extends Component {
         <View style={styles.footer}>
         <FontAwesome.Button
             name="chevron-left"
-            size={35}
+            size={25}
             backgroundColor="#88d9ca"
-            color="#fff"
+            color="#000000aa"
             onPress={this.NavigateToBack}
             borderRadius={10}
           />
           <MaterialCommunityIcons.Button
             onPress={this.NavigateToHome}
             name="home"
-            size={35}
+            size={25}
             backgroundColor="#88d9ca"
-            color="#fff"
+            color="#000000aa"
           />
           <FontAwesome.Button
             name="chevron-right"
-            size={35}
-            color="#fff"
+            size={25}
+            color="#000000aa"
             backgroundColor="#88d9ca"
             borderRadius={10}
             onPress={this.NavigateToNext}

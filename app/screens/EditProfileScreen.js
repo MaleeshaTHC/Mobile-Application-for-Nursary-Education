@@ -329,18 +329,21 @@ const EditProfileScreen = ({navigation}) => {
           <View
             style={{
               alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: 15,
+              width: '100%',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              marginBottom: 40,
+              marginTop: 30,
             }}>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={handleUpdate}>
-              <Text style={styles.buttonText}>Update Profile</Text>
+              onPress={() => navigation.navigate('ProfileScreen')}>
+              <Text style={styles.buttonText}>Back</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.buttonContainer}
-              onPress={() => navigation.navigate('ProfileScreen')}>
-              <Text style={styles.buttonText}>Back to Profile</Text>
+              onPress={handleUpdate}>
+              <Text style={styles.buttonText}>Update</Text>
             </TouchableOpacity>
           </View>
         </Animated.View>
@@ -426,8 +429,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   buttonContainer: {
-    marginTop: 25,
-    width: '80%',
+    margin: 20,
+    width: '35%',
     height: windowHeight / 15,
     backgroundColor: '#faecbf',
     padding: 10,

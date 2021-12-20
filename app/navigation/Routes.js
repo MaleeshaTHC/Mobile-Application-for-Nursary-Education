@@ -6,6 +6,7 @@ import {AuthContext} from './AuthProvider';
 
 import AppStack from './AppStack';
 import AuthStack from './AuthStack';
+import SplashScreen from '../screens/splash';
 
 const Routes = () => {
   const {user, setUser} = useContext(AuthContext);

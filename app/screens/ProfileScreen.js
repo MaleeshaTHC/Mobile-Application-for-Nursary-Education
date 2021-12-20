@@ -143,9 +143,27 @@ const ProfileScreen = ({navigation, route}) => {
             {userData ? userData.about || 'No details added.' : ''}
           </Text>
         </View>
-        <Text style={{fontSize: 30, textAlign: 'center', margin: 15}}>
-          Dashboard
-        </Text>
+        <View
+          style={{
+            borderTopColor: 'black',
+            borderTopWidth: 1,
+            width: '80%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginLeft: 40,
+            marginTop: 50,
+          }}>
+          <Text
+            style={{
+              fontSize: 40,
+              fontWeight: '400',
+              textAlign: 'center',
+              marginTop: 30,
+            }}>
+            Dashboard
+          </Text>
+        </View>
+
         <ScrollView
           horizontal={true}
           style={styles.container}
@@ -153,7 +171,7 @@ const ProfileScreen = ({navigation, route}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}
-          showsVerticalScrollIndicator={false}>
+          showsVerticalScrollIndicator={true}>
           <Text />
           {posts.map(item => (
             <PostCard key={item.id} item={item} onDelete={handleDelete} />
@@ -203,6 +221,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     justifyContent: 'space-around',
+    flexDirection: 'row',
     marginBottom: 40,
     marginTop: 30,
   },
@@ -226,8 +245,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   buttonContainer: {
-    marginTop: 20,
-    width: '80%',
+    margin: 20,
+    width: '35%',
     height: windowHeight / 15,
     backgroundColor: '#faecbf',
     padding: 10,

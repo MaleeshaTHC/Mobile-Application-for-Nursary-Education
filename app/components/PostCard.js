@@ -52,7 +52,7 @@ const PostCard = ({item, onDelete, onPress}) => {
 
   return (
     <Card
-      style={{width: 350, height: 420, borderRadius: 20, margin: 35}}
+      style={{width: 385, height: 425, borderRadius: 25, margin: 35}}
       key={item.id}>
       <UserInfo>
         <UserImg
@@ -78,7 +78,7 @@ const PostCard = ({item, onDelete, onPress}) => {
         <ProgressiveImage
           defaultImageSource={require('../assets/images/logo.png')}
           source={{uri: item.postImg}}
-          style={{width: '100%', height: 320, borderRadius: 5}}
+          style={{width: '100%', height: 325}}
         />
       ) : (
         <Divider />

@@ -8,6 +8,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
+  const [errortext, setErrortext] = useState('');
 
   return (
     <AuthContext.Provider
@@ -16,6 +17,15 @@ export const AuthProvider = ({children}) => {
         setUser,
         login: async (email, password) => {
           try {
+            setErrortext('');
+            if (!email) {
+              alert('Please fill Email');
+              return;
+            }
+            if (!password) {
+              alert('Please fill Password');
+              return;
+            }
             await auth().signInWithEmailAndPassword(email, password);
           } catch (e) {
             console.log(e);
@@ -74,8 +84,17 @@ export const AuthProvider = ({children}) => {
             console.log({error});
           }
         },
-        register: async (email, password) => {
+        register: async (email, password, confirmPassword) => {
           try {
+            setErrortext('');
+            if (!email) {
+              alert('Please fill Email !');
+              return;
+            }
+            if (!password) {
+              alert('Please fill Password !');
+              return;
+            }
             await auth()
               .createUserWithEmailAndPassword(email, password)
               .then(() => {

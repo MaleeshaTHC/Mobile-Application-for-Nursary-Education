@@ -57,7 +57,7 @@ export function DrawerContent(props) {
               )}
               label="Home"
               onPress={() => {
-                props.navigation.navigate('HomeScreen');
+                props.navigation.navigate('HomeScreenDrawer');
               }}
             />
             <DrawerItem
@@ -66,7 +66,7 @@ export function DrawerContent(props) {
               )}
               label="Profile"
               onPress={() => {
-                props.navigation.navigate('ProfileScreen');
+                props.navigation.navigate('ProfileScreenDrawer');
               }}
             />
             <Text />
@@ -79,7 +79,7 @@ export function DrawerContent(props) {
               )}
               label="Alphabet"
               onPress={() => {
-                props.navigation.navigate('AlphabetScreen');
+                props.navigation.navigate('AlphabetScreenDrawer');
               }}
             />
             <DrawerItem
@@ -88,7 +88,7 @@ export function DrawerContent(props) {
               )}
               label="Phrases"
               onPress={() => {
-                props.navigation.navigate('PhrasesScreen');
+                props.navigation.navigate('PhrasesScreenDrawer');
               }}
             />
             <DrawerItem
@@ -97,7 +97,7 @@ export function DrawerContent(props) {
               )}
               label="Numbers"
               onPress={() => {
-                props.navigation.navigate('NumbersScreen');
+                props.navigation.navigate('NumbersScreenDrawer');
               }}
             />
             <DrawerItem
@@ -106,7 +106,7 @@ export function DrawerContent(props) {
               )}
               label="Shapes"
               onPress={() => {
-                props.navigation.navigate('ShapesScreen');
+                props.navigation.navigate('ShapesScreenDrawer');
               }}
             />
             <DrawerItem
@@ -115,7 +115,7 @@ export function DrawerContent(props) {
               )}
               label="Colors"
               onPress={() => {
-                props.navigation.navigate('ColorsScreen');
+                props.navigation.navigate('ColorsScreenDrawer');
               }}
             />
             <DrawerItem
@@ -124,7 +124,7 @@ export function DrawerContent(props) {
               )}
               label="Poems"
               onPress={() => {
-                props.navigation.navigate('PoemsScreen');
+                props.navigation.navigate('PoemsScreenDrawer');
               }}
             />
             <DrawerItem
@@ -133,7 +133,7 @@ export function DrawerContent(props) {
               )}
               label="Family"
               onPress={() => {
-                props.navigation.navigate('MyFamScreen');
+                props.navigation.navigate('MyFamScreenDrawer');
               }}
             />
             <DrawerItem
@@ -142,7 +142,7 @@ export function DrawerContent(props) {
               )}
               label="School"
               onPress={() => {
-                props.navigation.navigate('SchoolScreen');
+                props.navigation.navigate('SchoolScreenDrawer');
               }}
             />
             <Text />
@@ -152,7 +152,7 @@ export function DrawerContent(props) {
               )}
               label="Activities"
               onPress={() => {
-                props.navigation.navigate('ActivityScreenStack');
+                props.navigation.navigate('ActivityScreenDrawer');
               }}
             />
             <Text />

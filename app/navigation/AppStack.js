@@ -42,6 +42,7 @@ import SchoolScreen from '../screens/SchoolScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AddMarksScreen from '../screens/AddMarksScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
+import AboutScreen from '../screens/About';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -58,6 +59,7 @@ const NavigationDrawerStructure = props => {
       <TouchableOpacity onPress={() => toggleDrawer()}>
         <MaterialCommunityIcons
           name="reorder-horizontal"
+          color="black"
           size={30}
           style={{marginLeft: 10}}
         />
@@ -72,7 +74,7 @@ const TabStack = () => {
       initialRouteName="HomeScreen"
       tabBarOptions={{
         activeTintColor: '#fff',
-        inactiveTintColor: '#ffeac1',
+        inactiveTintColor: '#000000aa',
         style: {
           backgroundColor: '#faa692',
           height: 50,
@@ -80,7 +82,7 @@ const TabStack = () => {
       }}>
       <Tab.Screen
         name="ProfileScreen"
-        component={ProfileScreenStack}
+        component={ProfileScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -381,6 +383,19 @@ const HomeScreenStack = ({navigation}) => {
         })}
       />
       <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
+        options={() => ({
+          headerTitle: '',
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
+        })}
+      />
+      <Stack.Screen
         name="ActivityScreenStack"
         component={ActivityStack}
         options={() => ({
@@ -639,7 +654,12 @@ const ProfileScreenStack = ({navigation}) => {
         component={ProfileScreen}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -647,7 +667,12 @@ const ProfileScreenStack = ({navigation}) => {
         component={EditProfileScreen}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -655,7 +680,12 @@ const ProfileScreenStack = ({navigation}) => {
         component={AddMarksScreen}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
     </Stack.Navigator>
@@ -671,7 +701,12 @@ function ActivityStack({navigation}) {
         component={ActivityScreen}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -679,7 +714,12 @@ function ActivityStack({navigation}) {
         component={AlphabetQuiz}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -687,7 +727,12 @@ function ActivityStack({navigation}) {
         component={PhrasesQuiz}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -695,7 +740,12 @@ function ActivityStack({navigation}) {
         component={NumbersQuiz}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -703,7 +753,12 @@ function ActivityStack({navigation}) {
         component={ShapesQuiz}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
       <Stack.Screen
@@ -711,7 +766,12 @@ function ActivityStack({navigation}) {
         component={ColorsQuiz}
         options={() => ({
           headerTitle: '',
-          headerShown: false,
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#b1d2c7',
+          },
         })}
       />
     </Stack.Navigator>
@@ -728,17 +788,39 @@ const App = () => {
           itemStyle: {marginVertical: 10},
           backgroundColor: '#eeeed1',
         }}>
-        <Drawer.Screen name="HomeScreenStack" component={HomeScreenStack} />
-        <Drawer.Screen name="ProfileScreen" component={ProfileScreenStack} />
-        <Drawer.Screen name="AlphabetScreen" component={AlphabetScreenStack} />
-        <Drawer.Screen name="PhrasesScreen" component={PhrasesScreenStack} />
-        <Drawer.Screen name="NumbersScreen" component={NumbersScreenStack} />
-        <Drawer.Screen name="ShapesScreen" component={ShapesScreenStack} />
-        <Drawer.Screen name="ColorsScreen" component={ColorsScreenStack} />
-        <Drawer.Screen name="PoemsScreen" component={PoemsScreenStack} />
-        <Drawer.Screen name="MyFamScreen" component={MyFamScreenStack} />
-        <Drawer.Screen name="SchoolScreen" component={SchoolScreenStack} />
-        <Drawer.Screen name="ActivityScreen" component={ActivityStack} />
+        <Drawer.Screen name="HomeScreenDrawer" component={HomeScreenStack} />
+        <Drawer.Screen
+          name="ProfileScreenDrawer"
+          component={ProfileScreenStack}
+        />
+        <Drawer.Screen
+          name="AlphabetScreenDrawer"
+          component={AlphabetScreenStack}
+        />
+        <Drawer.Screen
+          name="PhrasesScreenDrawer"
+          component={PhrasesScreenStack}
+        />
+        <Drawer.Screen
+          name="NumbersScreenDrawer"
+          component={NumbersScreenStack}
+        />
+        <Drawer.Screen
+          name="ShapesScreenDrawer"
+          component={ShapesScreenStack}
+        />
+        <Drawer.Screen
+          name="ColorsScreenDrawer"
+          component={ColorsScreenStack}
+        />
+        <Drawer.Screen name="PoemsScreenDrawer" component={PoemsScreenStack} />
+        <Drawer.Screen name="MyFamScreenDrawer" component={MyFamScreenStack} />
+        <Drawer.Screen
+          name="SchoolScreenDrawer"
+          component={SchoolScreenStack}
+        />
+        <Drawer.Screen name="ActivityScreenDrawer" component={ActivityStack} />
+        <Drawer.Screen name="AboutScreen" component={AboutScreen} />
       </Drawer.Navigator>
     </PaperProvider>
   );
