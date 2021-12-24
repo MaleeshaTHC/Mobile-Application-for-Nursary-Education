@@ -10,8 +10,33 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.11",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/auth": "^13.0.1",
+    "@react-native-firebase/firestore": "^13.0.1",
+    "@react-native-firebase/storage": "^13.0.1",
+    "@react-native-google-signin/google-signin": "^7.0.1",
+    "@react-navigation/bottom-tabs": "^5.11.15",
+    "@react-navigation/drawer": "^5.12.9",
+    "@react-navigation/native": "^5.9.8",
+    "@react-navigation/stack": "^5.14.9",
+    "moment": "^2.29.1",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "0.66.3",
+    "react-native-action-button": "^2.8.5",
+    "react-native-fbsdk-next": "^6.1.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-image-crop-picker": "^0.37.2",
+    "react-native-onboarding-swiper": "^1.1.4",
+    "react-native-paper": "^4.10.1",
+    "react-native-reanimated": "^2.2.4",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0",
+    "react-native-snap-carousel": "^3.9.1",
+    "react-native-vector-icons": "^9.0.0",
+    "reanimated-bottom-sheet": "^1.0.0-alpha.22",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -25,5 +50,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
   }
 }
