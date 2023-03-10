@@ -15,6 +15,6 @@ The app is built using React Native, which allows for cross-platform compatibili
 
 To run the app, you will need to have React Native and Firebase installed on your system. You can then clone the git repository and run the app using the command react-native run-android in the terminal. You will also need to set up a Firebase project and add the configuration details to the app.
 
-You can simply try this App by downloading it from this and install on your Android device. shorturl.at/jkDQ4
+You can simply try this App by downloading it from this and install on your Android device. http://shorturl.at/jkDQ4
 
 Thank you for checking out the Nursery Education Application - Mobile App! We hope that it provides a fun and engaging learning experience for young children.
