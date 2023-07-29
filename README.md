@@ -20,11 +20,5 @@ You can simply try this App by downloading it from this and install on your Andr
 
 <h2>User Interfaces</h2>
 
-![Uploading Screenshot_20230724-121237.png…]()
-![Uploading Screenshot_20230724-121243.png…]()
-![Screenshot_20230724-121240](https://github.com/MaleeshaTHC/Mobile-Application-for-Nursary-Education/assets/83639385/6ec93faf-b244-4361-9770-0fcc8eeea1fc)
-![Screenshot_20230724-121247](https://github.com/MaleeshaTHC/Mobile-Application-for-Nursary-Education/assets/83639385/686fb09d-ff7e-491e-9389-8eb6ffb42831)
-
-
 
 Thank you for checking out the Nursery Education Application - Mobile App! We hope that it provides a fun and engaging learning experience for young children.
